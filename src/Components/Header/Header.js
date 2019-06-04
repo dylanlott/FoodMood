@@ -1,31 +1,39 @@
 import React, {Component} from 'react'
 import Login from '../Login/Login'
+import RegisterForm from '../Login/RegisterForm';
 
 
 class Header extends Component{
 constructor(){
     super()
         this.state={
-            moduleSeen: false,
-
+            loginModuleSeen: false,
+            registerModuleSeen:false,
         }
     
 }
 
-handleToggle=(e)=>{
+handleLoginToggle=(e)=>{
   this.setState({
-      moduleSeen: !this.state.moduleSeen
+      loginModuleSeen: !this.state.loginModuleSeen
   })
+}
+handleRegisterToggle=(e)=>{
+    this.setState({
+        registerModuleSeen: !this.state.registerModuleSeen
+    })
 }
 
     render(){
         return(
             <div>
             <h1>Header</h1>
-            <button onClick={this.handleToggle}>login</button>
+            <button onClick={this.handleLoginToggle}>login</button>
+            <button onClick={this.handleRegisterToggle}>register</button>
 
 
-            {this.state.moduleSeen ? <Login handleToggle={this.handleToggle} /> : null}
+            {this.state.loginModuleSeen ? <Login handleToggle={this.handleLoginToggle} /> : null}
+            {this.state.registerModuleSeen? <RegisterForm /> : null}
             </div>
         )
     }
