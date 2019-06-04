@@ -12,9 +12,9 @@ constructor(){
     
 }
 
-handleLogin=(e)=>{
+handleToggle=(e)=>{
   this.setState({
-      moduleSeen: true
+      moduleSeen: !this.state.moduleSeen
   })
 }
 
@@ -22,13 +22,14 @@ handleLogin=(e)=>{
         return(
             <div>
             <h1>Header</h1>
-            <button onClick={this.handleLogin}>login</button>
+            <button onClick={this.handleToggle}>login</button>
 
 
-            {this.state.moduleSeen ? <Login /> : null}
+            {this.state.moduleSeen ? <Login handleToggle={this.handleToggle} /> : null}
             </div>
         )
     }
 }
 
+//have this subscribed to userReducer (mapStateToProps), display it via props when user logs in
 export default Header

@@ -1,5 +1,6 @@
 import React, {Component } from 'react'
 import axios from 'axios';
+import RegisterForm from './RegisterForm'
 
 
 
@@ -8,8 +9,15 @@ class LoginForm extends Component{
 		super()
 		this.state = {
 			user_name: '',
-			user_password: ''
+            user_password: '',
+            moduleSeen:false
 		}
+    }
+
+    handleToggle=(e)=>{
+        this.setState({
+            moduleSeen: !this.state.moduleSeen
+        })
     }
     
     handleLoginInfoUpdate=(e)=>{
@@ -24,13 +32,17 @@ class LoginForm extends Component{
         const {user_name, user_password}= this.state
         axios.post('/auth/login', {user_name, user_password})
         .then((res)=>{
-
+            // UPDATE_USER
+            this.props.handleToggle()
         })
         .catch((err)=>{
             console.log(err)
         })
-        e.target.user_name.value=''
-        e.target.user_password.value=''
+        this.setState({
+            user_name:'',
+            user_password:''
+        })
+       
         
     }
 
@@ -41,8 +53,11 @@ class LoginForm extends Component{
                 <form onSubmit={this.handleUserLogin}>
                     <input type='text' name='user_name' placeholder='username' onChange={this.handleLoginInfoUpdate}/>
                     <input type='password' name='user_password' placeholder='password' onChange={this.handleLoginInfoUpdate}/>
-                    <button>Log In</button>
+                    <button onClick={this.handleUserLogin}>Log In</button>
                 </form>
+                <p>Not a user? Create an account<button onClick={this.handleToggle}>here</button></p>
+                {this.state.moduleSeen ? <RegisterForm /> :null}
+
             </>
         )
     }
