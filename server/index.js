@@ -4,6 +4,7 @@ const express= require('express')
 const session= require('express-session')
 const massive= require('massive')
 const auth_ctrl= require('./controllers/authcontroller')
+const dish_ctrl= require('./controllers/dishcontroller')
 
 
 const app= express()
@@ -37,6 +38,10 @@ massive(CONNECTION_STRING).then((database)=>{
 app.post('/auth/register', auth_ctrl.register)
 app.post('/auth/login', auth_ctrl.login)
 app.get('/auth/logout', auth_ctrl.logout)
+
+
+//Endpoints for dishes
+app.get('/api/dishes', dish_ctrl.getAllDishes)
 
 
 app.listen(SERVER_PORT, ()=> console.log(`${SERVER_PORT} points to griffindor`))
