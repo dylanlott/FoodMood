@@ -12,13 +12,17 @@ constructor(){
     
 }
 
+handleLogin=(e)=>{
+  this.setState({
+      moduleSeen: true
+  })
+}
+
     render(){
         return(
             <div>
             <h1>Header</h1>
-            <form>
-
-            </form>
+            <button onClick={this.handleLogin}>login</button>
 
 
             {this.state.moduleSeen ? <Login /> : null}
