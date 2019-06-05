@@ -2,7 +2,8 @@ import React, {Component} from 'react'
 import Login from '../Login/Login'
 import RegisterForm from '../Login/RegisterForm';
 import styled from 'styled-components'
-
+import {connect} from 'react-redux'
+import {Link} from 'react-router-dom'
 
 class Header extends Component{
 constructor(){
@@ -25,13 +26,23 @@ handleRegisterToggle=(e)=>{
     })
 }
 
+handleLogout=(e)=>{
+    
+}
+
     render(){
+        console.log(this.props.user_name)
         return(
             <>
             <Div>
             <H1>FoodMood</H1>
-            <Button onClick={this.handleLoginToggle}>login</Button>
-            <Button onClick={this.handleRegisterToggle}>register</Button>
+
+            {!this.props.user_name 
+            ? (<><Button onClick={this.handleLoginToggle}>login</Button>
+            <Button onClick={this.handleRegisterToggle}>register</Button></>) 
+            :(<><Link><h3>{this.props.user_name}</h3></Link>
+                <button>Logout</button></>)}
+            
 
 
             </Div>
@@ -43,7 +54,11 @@ handleRegisterToggle=(e)=>{
 }
 
 //have this subscribed to userReducer (mapStateToProps), display it via props when user logs in
-export default Header
+const mapStateToProps= reduxState =>{
+    return reduxState
+}
+
+export default connect(mapStateToProps)(Header)
 
 const Button= styled.button`
 background: palegreen;

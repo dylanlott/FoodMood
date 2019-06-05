@@ -34,10 +34,10 @@ getAll=()=>{
 }
 
 getCategory = (category) => {
-    console.log(category)
+    
     axios.get(`/api/${category}`)
     .then(dishes => {
-        console.log(dishes.data)
+       
      this.setState({
          
       dishes: dishes.data

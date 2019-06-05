@@ -1,7 +1,8 @@
 import React, {Component } from 'react'
 import axios from 'axios';
 import RegisterForm from './RegisterForm'
-
+import {connect} from 'react-redux'
+import {updateUser} from '../../redux/reducers/userReducer'
 
 
 class LoginForm extends Component{
@@ -33,6 +34,8 @@ class LoginForm extends Component{
         axios.post('/auth/login', {user_name, user_password})
         .then((res)=>{
             // UPDATE_USER
+            console.log(res.data)
+            this.props.updateUser(res.data)
             this.props.handleToggle()
         })
         .catch((err)=>{
@@ -66,4 +69,4 @@ class LoginForm extends Component{
 
 }
 
-export default LoginForm
+export default connect(null, {updateUser})(LoginForm)
