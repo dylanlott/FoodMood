@@ -27,7 +27,7 @@ handleRegisterToggle=(e)=>{
     render(){
         return(
             <div>
-            <h1>Header</h1>
+            <h1>FoodMood</h1>
             <button onClick={this.handleLoginToggle}>login</button>
             <button onClick={this.handleRegisterToggle}>register</button>
 
