@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import Header from '../Header/Header';
 import axios from 'axios'
 import Dishes from '../Dishes/Dishes'
-import Restaurant from '../Restaurant/Restaurant';
+import styled from 'styled-components'
 
 
 class Dashboard extends Component{
@@ -14,6 +14,16 @@ class Dashboard extends Component{
     }
 
 componentDidMount=()=>{
+    axios.get('/api/dishes')
+    .then((res)=>{
+        
+        this.setState({
+            dishes: res.data
+        })
+    })
+}
+
+getAll=()=>{
     axios.get('/api/dishes')
     .then((res)=>{
         
@@ -39,20 +49,34 @@ getCategory = (category) => {
         const dishes= this.state.dishes.map((dish, i,j)=>{
             return(
               
-                <Dishes key={i} dishName={dish.dish_name} imgUrl={dish.img_url} dishDesc={dish.dish_description}/>
+                <Dishes key={i} dishName={dish.dish_name} imgUrl={dish.img_url} dishDesc={dish.dish_description} dishId={dish.dish_id}/>
                
             )
         })
         return(
-            <div>
+            <>
                 <Header/>
-                <h1>Dashboard</h1>
-                <button onClick={()=> this.getCategory('Burger')}>Burgers</button>
-                <button onClick={()=> this.getCategory('Brunch')}>Brunch</button>
+            <div>
+                <Button onClick={()=>this.getAll()}>All</Button>
+                <Button onClick={()=> this.getCategory('Burger')}>Burgers</Button>
+                <Button onClick={()=> this.getCategory('Brunch')}>Brunch</Button>
                 {dishes}
             </div>
+            </>
         )
     }
 }
 
 export default Dashboard
+
+const Button =styled.button`
+
+width: 66px;
+height: 29px;
+left: 201px;
+top: 32px;
+color:
+background: #DEDEDE;
+border-radius: 20px;
+opacity: .5;
+`

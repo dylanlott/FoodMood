@@ -6,7 +6,7 @@ import Restaurant from './Components/Restaurant/Restaurant';
 export default (
     <Switch>
         <Route exact path='/' component={Dashboard}/>
-        <Route path='/restaurant' component={Restaurant}/>
+        <Route path='/restaurant/:id' component={Restaurant}/>
     </Switch>
 )
 
