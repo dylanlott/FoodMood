@@ -88,6 +88,7 @@ align-items: center;
 
 `
 const Div1= styled.div`
+
 width: 100%;
 height: 36px;
 display: flex;

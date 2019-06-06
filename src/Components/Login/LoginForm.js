@@ -19,12 +19,14 @@ class LoginForm extends Component{
         this.setState({
             moduleSeen: !this.state.moduleSeen
         })
+        
     }
     
     handleLoginInfoUpdate=(e)=>{
         this.setState({
             [e.target.name]: e.target.value
         })
+        
     }
 
 

@@ -27,10 +27,14 @@ text-decoration: none;
 font-family: 'Noto Sans TC', sans-serif;
 background-color: whitesmoke;
 border: solid lightgray 2px;
+
+
+@media(max-width:400px){
 height: 40%;
 width: 90%;
 border-radius: 6px;
 margin-top: 1em;
+}
 `
 const Img =styled.img`
 width: 100%;

@@ -7,7 +7,7 @@ class RegisterForm extends Component{
 
     render(){
         return(
-            <>
+            <Div>
             <h1>register</h1>
             <Form>
                 <Input type='text' name='user_name' placeholder='username'/>
@@ -15,12 +15,21 @@ class RegisterForm extends Component{
                 <Input type='password' name='user_password' placeholder='password'/>
             </Form>
             <Button>Create Account</Button>
-            </>
+            </Div>
         )
     }
 }
 
 export default RegisterForm
+const Div= styled.div`
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap');
+
+font-family: 'Noto Sans TC', sans-serif;
+position: fixed;
+top: 10;
+background-color: white;
+z-index: 999;
+`
 
 const Form= styled.form`
 display: flex;

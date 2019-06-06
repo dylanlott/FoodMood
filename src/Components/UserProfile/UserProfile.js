@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import UpdateInfo from './UpdateInfo';
 
 
 class UserProfile extends Component{
@@ -9,6 +10,7 @@ class UserProfile extends Component{
         return(
             <div>
                 <h1>UserProfile</h1>
+                <UpdateInfo />
             </div>
 
         )

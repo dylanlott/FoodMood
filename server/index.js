@@ -47,7 +47,7 @@ app.get('/api/restaurant/:id', dish_ctrl.getRestaurant)
 
 //Endpoints for user profile
 
-app.put('/api/user/:id', auth_ctrl.editUser)
+app.put('/api/user', auth_ctrl.editUser)
 
 
 app.listen(SERVER_PORT, ()=> console.log(`${SERVER_PORT} points to griffindor`))

@@ -5,6 +5,7 @@ import styled from 'styled-components'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 import axios from 'axios'
+import {logoutUser} from '../../redux/reducers/userReducer'
 
 class Header extends Component{
 constructor(){
@@ -27,15 +28,15 @@ handleRegisterToggle=(e)=>{
     })
 }
 
-// handleLogout=(e)=>{
-//     axios.get('/auth/logout')
-//     .then(()=>{
-
-//     })
-//     .catch((err)=>{
-//         console.log(err)
-//     })
-// }
+handleLogout=(e)=>{
+    axios.get('/auth/logout')
+    .then(()=>{
+        this.props.logoutUser()
+    })
+    .catch((err)=>{
+        console.log(err)
+    })
+}
 
     render(){
         console.log(this.props)
@@ -65,7 +66,7 @@ const mapStateToProps= reduxState =>{
     return reduxState
 }
 
-export default connect(mapStateToProps)(Header)
+export default connect(mapStateToProps, {logoutUser})(Header)
 
 const Button= styled.button`
 background: palegreen;

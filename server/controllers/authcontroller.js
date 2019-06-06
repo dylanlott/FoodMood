@@ -47,12 +47,20 @@ module.exports={
         res.sendStatus(200)
     },
 
-    editUser: async (req, res)=>{
-        console.log(req.session)
+    editUser:  (req, res)=>{
+       
         const db= req.app.get('db')
         const{id}= req.session.user
         const{user_name}= req.body
+        console.log(id, user_name)
+        db.auth.edit_user({user_name, id})
+        .then(dbResponse=>{
+            res.status(200).send('Username updated')
+        })
+        .catch(error=>{
+            throw error
+        })
 
-        const editedUser= await db.auth.edit_user({user_name, id})
+        
     }
 }
