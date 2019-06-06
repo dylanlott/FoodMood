@@ -30,10 +30,11 @@ border: solid lightgray 2px;
 height: 40%;
 width: 90%;
 border-radius: 6px;
-margin-bottom: 1em;
+margin-top: 1em;
 `
 const Img =styled.img`
 width: 100%;
+height: 14em;
 `
 
 const H4= styled.h4`

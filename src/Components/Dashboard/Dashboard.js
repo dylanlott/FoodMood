@@ -60,10 +60,14 @@ getCategory = (category) => {
                 <Button onClick={()=>this.getAll()}>All</Button>
                 <Button onClick={()=> this.getCategory('Burger')}>Burgers</Button>
                 <Button onClick={()=> this.getCategory('Brunch')}>Brunch</Button>
-                <Button>Test</Button>
-                <Button>Test</Button>
-                <Button>Test</Button>
-                <Button>Test</Button>
+                <Button>Mexican</Button>
+                <Button>Pizza</Button>
+                <Button>Sushi</Button>
+                <Button>Happy Hour</Button>
+                <Button>Healthy</Button>
+                <Button>Pasta</Button>
+                <Button>Dessert</Button>
+
                 
             </Div1>
                 <Div>
@@ -81,27 +85,33 @@ const Div= styled.div`
 display: flex;
 flex-direction: column;
 align-items: center;
+
 `
 const Div1= styled.div`
 width: 100%;
-height: 30px;
+height: 36px;
 display: flex;
 overflow: auto;
 `
 const Button =styled.button`
 background: #DEDEDE;
 border-radius: 20px;
+width: 3em;
+
 
 @media(max-width:400px){
-width: 64px;
-height: 29px;
+width: 10em;
+height: 35px;
 left: 201px;
 top: 32px;
 
 background: #DEDEDE;
 border-radius: 16px;
 opacity: .5;
-margin: 0 .5em;
+margin-left: 1.2em;
+display: flex;
+
 ::webkit-scrollbar{display:none}
 }
 `
+

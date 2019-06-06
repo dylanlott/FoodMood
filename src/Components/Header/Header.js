@@ -4,6 +4,7 @@ import RegisterForm from '../Login/RegisterForm';
 import styled from 'styled-components'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
+import axios from 'axios'
 
 class Header extends Component{
 constructor(){
@@ -26,12 +27,18 @@ handleRegisterToggle=(e)=>{
     })
 }
 
-handleLogout=(e)=>{
-    
-}
+// handleLogout=(e)=>{
+//     axios.get('/auth/logout')
+//     .then(()=>{
+
+//     })
+//     .catch((err)=>{
+//         console.log(err)
+//     })
+// }
 
     render(){
-        console.log(this.props.user_name)
+        console.log(this.props)
         return(
             <>
             <Div>
@@ -40,8 +47,8 @@ handleLogout=(e)=>{
             {!this.props.user_name 
             ? (<><Button onClick={this.handleLoginToggle}>login</Button>
             <Button onClick={this.handleRegisterToggle}>register</Button></>) 
-            :(<><H3>{this.props.user_name}</H3>
-                <Button>Logout</Button></>)}
+            :(<><Link to={`/user/${this.props.id}`}><H3>{this.props.user_name}</H3></Link>
+                <Button onClick={this.handleLogout}>Logout</Button></>)}
             
 
 

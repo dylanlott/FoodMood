@@ -45,5 +45,14 @@ module.exports={
     logout: (req, res)=>{
         req.session.destroy()
         res.sendStatus(200)
+    },
+
+    editUser: async (req, res)=>{
+        console.log(req.session)
+        const db= req.app.get('db')
+        const{id}= req.session.user
+        const{user_name}= req.body
+
+        const editedUser= await db.auth.edit_user({user_name, id})
     }
 }
