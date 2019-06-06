@@ -8,12 +8,11 @@ const Dishes = (props)=>{
     console.log(props.dishId)
     return(
         <DishName to={`/restaurant/${props.dishId}`}>
-        <div>
-            
-            <img alt='img' src={props.imgUrl}/>
-            <h4>{props.dishName}</h4>
-            <p>{props.dishDesc}</p>
-            <button>Favorite </button>
+        <div> 
+            <Img alt='img' src={props.imgUrl}/>
+            {/* <H4>{props.dishName}</H4> */}
+            <P>{props.dishDesc}</P>
+            {/* <Button>Favorite </Button> */}
         </div>
         </DishName>
     )
@@ -26,6 +25,24 @@ const DishName= styled(Link)`
 color: black;
 text-decoration: none;
 font-family: 'Noto Sans TC', sans-serif;
+background-color: whitesmoke;
+border: solid lightgray 2px;
+height: 40%;
+width: 90%;
+border-radius: 6px;
+margin-bottom: 1em;
+`
+const Img =styled.img`
+width: 100%;
+`
 
+const H4= styled.h4`
+margin: 0 0;
+`
+const P= styled.p`
+margin: 0 0;
+`
+const Button= styled.button`
+margin-bottom: 1em;
 `
 

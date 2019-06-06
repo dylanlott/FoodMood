@@ -40,8 +40,8 @@ handleLogout=(e)=>{
             {!this.props.user_name 
             ? (<><Button onClick={this.handleLoginToggle}>login</Button>
             <Button onClick={this.handleRegisterToggle}>register</Button></>) 
-            :(<><Link><h3>{this.props.user_name}</h3></Link>
-                <button>Logout</button></>)}
+            :(<><H3>{this.props.user_name}</H3>
+                <Button>Logout</Button></>)}
             
 
 
@@ -71,7 +71,7 @@ height: 50%;
 
 `
 const Div= styled.div`
-background: white;
+background: whitesmoke;
 width: 100vw;
 display: flex;
 align-items: center;
@@ -80,4 +80,9 @@ align-items: center;
 const H1= styled.h1`
 margin-left: 15px;
 margin-right: 30px;
+`
+
+const H3= styled.h3`
+color: black;
+text-decoration: none;
 `

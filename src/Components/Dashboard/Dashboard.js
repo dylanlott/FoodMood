@@ -56,12 +56,19 @@ getCategory = (category) => {
         return(
             <>
                 <Header/>
-            <div>
+            <Div1>
                 <Button onClick={()=>this.getAll()}>All</Button>
                 <Button onClick={()=> this.getCategory('Burger')}>Burgers</Button>
                 <Button onClick={()=> this.getCategory('Brunch')}>Brunch</Button>
+                <Button>Test</Button>
+                <Button>Test</Button>
+                <Button>Test</Button>
+                <Button>Test</Button>
+                
+            </Div1>
+                <Div>
                 {dishes}
-            </div>
+                </Div>
             </>
         )
     }
@@ -69,14 +76,32 @@ getCategory = (category) => {
 
 export default Dashboard
 
-const Button =styled.button`
 
-width: 66px;
+const Div= styled.div`
+display: flex;
+flex-direction: column;
+align-items: center;
+`
+const Div1= styled.div`
+width: 100%;
+height: 30px;
+display: flex;
+overflow: auto;
+`
+const Button =styled.button`
+background: #DEDEDE;
+border-radius: 20px;
+
+@media(max-width:400px){
+width: 64px;
 height: 29px;
 left: 201px;
 top: 32px;
-color:
+
 background: #DEDEDE;
-border-radius: 20px;
+border-radius: 16px;
 opacity: .5;
+margin: 0 .5em;
+::webkit-scrollbar{display:none}
+}
 `

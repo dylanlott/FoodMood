@@ -3,7 +3,7 @@ import axios from 'axios';
 import RegisterForm from './RegisterForm'
 import {connect} from 'react-redux'
 import {updateUser} from '../../redux/reducers/userReducer'
-
+import styled from 'styled-components'
 
 class LoginForm extends Component{
     constructor() {
@@ -53,20 +53,62 @@ class LoginForm extends Component{
 
     render(){
         return(
-            <>
-                <h1>Login</h1>
-                <form onSubmit={this.handleUserLogin}>
-                    <input type='text' name='user_name' placeholder='username' onChange={this.handleLoginInfoUpdate}/>
-                    <input type='password' name='user_password' placeholder='password' onChange={this.handleLoginInfoUpdate}/>
-                    <button onClick={this.handleUserLogin}>Log In</button>
-                </form>
-                <p>Not a user? Create an account<button onClick={this.handleToggle}>here</button></p>
+            <Div>
+                <h1>Log in to FoodMood</h1>
+                <Form onSubmit={this.handleUserLogin}>
+                    <Input type='text' name='user_name' placeholder='username' onChange={this.handleLoginInfoUpdate}/>
+                    <Input type='password' name='user_password' placeholder='password' onChange={this.handleLoginInfoUpdate}/>
+                    <Button onClick={this.handleUserLogin}>Log In</Button>
+                </Form>
+                <p>Not a user? Create an account<Button onClick={this.handleToggle}>here</Button></p>
                 {this.state.moduleSeen ? <RegisterForm /> :null}
 
-            </>
+            </Div>
         )
     }
 
 }
 
 export default connect(null, {updateUser})(LoginForm)
+
+const Div= styled.div`
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap');
+
+font-family: 'Noto Sans TC', sans-serif;
+position: fixed;
+top: 10;
+background-color: white;
+z-index: 999
+
+
+`
+
+const Form= styled.form`
+display: flex;
+flex-direction: column;
+width: 100vw;
+align-items: center;
+
+`
+
+const Button= styled.button`
+background: palegreen;
+border-radius: 3px;
+border: 2px solid palegreen;
+color: white;
+margin: .5em .5em;
+padding: 0.25em 1em;
+height: 50%;
+`
+
+const Input= styled.input`
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap');
+font-family: 'Noto Sans TC', sans-serif;
+margin: 5px;
+width: 50%;
+border-radius: 6px;
+border: none;
+border-bottom: 1px solid lightgray;
+font-size: 20px;
+
+`
