@@ -49,5 +49,8 @@ app.get('/api/restaurant/:id', dish_ctrl.getRestaurant)
 
 app.put('/api/user', auth_ctrl.editUser)
 
+//Endpoint for favorites
+app.post('/api/favorite', dish_ctrl.addFavorite)
+
 
 app.listen(SERVER_PORT, ()=> console.log(`${SERVER_PORT} points to griffindor`))

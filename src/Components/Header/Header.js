@@ -66,7 +66,7 @@ handleLogout=(e)=>{
 
             </Div>
             {this.state.loginModuleSeen ? <Login handleToggle={this.handleLoginToggle} /> : null}
-            {this.state.registerModuleSeen? <RegisterForm /> : null}
+            {this.state.registerModuleSeen? <RegisterForm registerToggle={this.handleRegisterToggle}/> : null}
             </>
         )
     }

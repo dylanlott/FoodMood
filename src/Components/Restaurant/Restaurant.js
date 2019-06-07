@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import axios from 'axios'
 import styled from 'styled-components'
+import {connect} from 'react-redux'
 
 class Restaurant extends Component{
 
@@ -23,7 +24,14 @@ componentDidMount(){
         })
     })
 }
-    render(){
+addToFavorites=(e)=>{
+    
+   axios.post('/api/favorite', {user_id: this.props.id, dish: this.state.dish.dish_id} )
+   .then((res)=>{
+       console.log('Added to favorites')
+   })
+}
+render(){
         console.log(this.state.dish)
         const {dish}= this.state
         return(
@@ -35,11 +43,15 @@ componentDidMount(){
                 <p>{dish.rest_name}</p>
                 <p>{dish.rest_address}</p>
                 <p>{`${dish.rest_city} ${dish.rest_state} ${dish.rest_zip}`}</p>
+                <button onClick={this.addToFavorites}> Favorite </button>
             </Div>
         )
     }
 }
-export default Restaurant
+const mapStateToProps=(reduxState)=>{
+    return reduxState
+}
+export default connect(mapStateToProps)(Restaurant)
 
 const Div =styled.div`
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap');

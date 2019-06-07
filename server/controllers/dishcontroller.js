@@ -36,6 +36,20 @@ module.exports={
         .catch(error =>{
             if(error) throw error
         })
+    },
+
+    addFavorite:(req, res)=>{
+        const db= req.app.get('db')
+        const {user_id, dish}= req.body
+        console.log(req.body)
+
+        db.dishes.add_favorite({user_id, dish})
+        .then((dbRes)=> {
+            res.status(200).send('Added to favorites')
+        })
+        .catch(error =>{
+            if(error) throw error
+        })
     }
     
 }

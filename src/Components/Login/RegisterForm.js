@@ -1,29 +1,51 @@
 import React, {Component} from 'react'
 import axios from 'axios'
 import styled from 'styled-components'
+import {connect} from 'react-redux'
+import {updateUser} from './../../redux/reducers/userReducer'
 
 class RegisterForm extends Component{
+    constructor(){
+        super()
+        this.state={
+            user_name: '',
+            user_password: '',
+            user_email: ''
+        }
+    }
+
+handleInput=(e)=>{
+    this.setState({
+    [e.target.name]: e.target.value
+    })
+}
 
 registerUser=(e)=>{
-    axios.post('/auth/register')
-    .then()
+   const {user_name, user_password, user_email}= this.state
+    axios.post('/auth/register', {user_name, user_password, user_email})
+    .then((res)=>{
+        this.props.updateUser(res.data)
+        this.props.registerToggle()
+    })
 }
     render(){
         return(
             <Div>
             <h1>register</h1>
             <Form>
-                <Input type='text' name='user_name' placeholder='username'/>
-                <Input type='text' name='user_email' placeholder='email' />
-                <Input type='password' name='user_password' placeholder='password'/>
+                <Input type='text' name='user_name' placeholder='username' onChange={this.handleInput}/>
+                <Input type='text' name='user_email' placeholder='email' onChange={this.handleInput}/>
+                <Input type='password' name='user_password' placeholder='password'onChange={this.handleInput}/>
             </Form>
-            <Button>Create Account</Button>
+            <Button onClick={this.registerUser}>Create Account</Button>
             </Div>
         )
     }
 }
 
-export default RegisterForm
+
+
+export default connect(null, {updateUser}) (RegisterForm)
 const Div= styled.div`
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap');
 

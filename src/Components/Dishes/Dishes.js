@@ -2,21 +2,26 @@ import React from 'react'
 
 import {Link} from 'react-router-dom'
 import styled from 'styled-components'
-
+import {connect} from 'react-redux'
+import axios from 'axios'
 
 const Dishes = (props)=>{
    
+
+
+ 
     return(
         <DishName to={`/restaurant/${props.dishId}`}>
         <div> 
             <Img alt='img' src={props.imgUrl}/>
             {/* <H4>{props.dishName}</H4> */}
             <P>{props.dishDesc}</P>
-            {/* <Button>Favorite </Button> */}
+            <Button >Favorite </Button>
         </div>
         </DishName>
     )
 }
+
 
 export default Dishes
 

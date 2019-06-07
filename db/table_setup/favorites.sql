@@ -1,4 +1,5 @@
 create table favorites(
 favorite_id serial primary key,
-user int REFERENCES users(user_id)
-)
+user_id int references users(user_id),
+dish int references dishes(dish_id)
+);

@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import UpdateInfo from './UpdateInfo';
+import Favorites from './Favorites';
 
 
 class UserProfile extends Component{
@@ -11,6 +12,7 @@ class UserProfile extends Component{
             <div>
                 <h1>UserProfile</h1>
                 <UpdateInfo />
+                <Favorites />
             </div>
 
         )
