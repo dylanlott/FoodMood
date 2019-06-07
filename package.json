@@ -18,7 +18,8 @@
     "react-scripts": "3.0.1",
     "redux": "^4.0.1",
     "slug": "^1.1.0",
-    "styled-components": "^4.2.1"
+    "styled-components": "^4.2.1",
+    "webkit": "0.0.0"
   },
   "scripts": {
     "start": "react-scripts start",

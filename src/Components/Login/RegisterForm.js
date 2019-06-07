@@ -4,7 +4,10 @@ import styled from 'styled-components'
 
 class RegisterForm extends Component{
 
-
+registerUser=(e)=>{
+    axios.post('/auth/register')
+    .then()
+}
     render(){
         return(
             <Div>

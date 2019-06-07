@@ -18,13 +18,24 @@ constructor(){
 }
 
 handleLoginToggle=(e)=>{
+    if(this.state.registerModuleSeen === true){
+        this.setState({
+            registerModuleSeen: false,
+        })
+    }
   this.setState({
       loginModuleSeen: !this.state.loginModuleSeen
   })
 }
 handleRegisterToggle=(e)=>{
+    if(this.state.loginModuleSeen === true){
+        this.setState({
+            loginModuleSeen: false,
+        })
+    }
     this.setState({
-        registerModuleSeen: !this.state.registerModuleSeen
+        registerModuleSeen: !this.state.registerModuleSeen,
+    
     })
 }
 

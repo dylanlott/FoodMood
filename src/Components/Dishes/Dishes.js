@@ -5,7 +5,7 @@ import styled from 'styled-components'
 
 
 const Dishes = (props)=>{
-    console.log(props.dishId)
+   
     return(
         <DishName to={`/restaurant/${props.dishId}`}>
         <div> 
