@@ -16,7 +16,7 @@ const Dishes = (props)=>{
             <Img alt='img' src={props.imgUrl}/>
             {/* <H4>{props.dishName}</H4> */}
             <P>{props.dishDesc}</P>
-            <Button >Favorite </Button>
+            
         </div>
         </DishName>
     )

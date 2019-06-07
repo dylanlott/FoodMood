@@ -16,9 +16,11 @@ class LoginForm extends Component{
     }
 
     handleToggle=(e)=>{
-        this.setState({
-            moduleSeen: !this.state.moduleSeen
-        })
+        
+        // this.setState({
+        //     moduleSeen: !this.state.moduleSeen
+        // })
+        this.props.registerToggle()
         
     }
     
@@ -36,7 +38,7 @@ class LoginForm extends Component{
         axios.post('/auth/login', {user_name, user_password})
         .then((res)=>{
             // UPDATE_USER
-            console.log(res.data)
+            
             this.props.updateUser(res.data)
             this.props.handleToggle()
         })

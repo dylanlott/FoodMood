@@ -8,7 +8,7 @@ class Login extends Component{
     render(){
         return(
             <div>
-                <LoginForm handleLogin={this.props.handleLogin} handleToggle={this.props.handleToggle}/>
+                <LoginForm handleLogin={this.props.handleLogin} handleToggle={this.props.handleToggle} registerToggle={this.props.registerToggle}/>
                
             </div>
         )

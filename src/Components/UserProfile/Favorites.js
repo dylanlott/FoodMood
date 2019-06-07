@@ -10,7 +10,11 @@ class Favorites extends Component{
         }
     }
 
+    componentDidMount=()=>{
+        axios.get()
 
+        //write functionality to display users favorites
+    }
 
 
     render(){

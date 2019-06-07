@@ -15,7 +15,7 @@ class UpdateInfo extends Component{
         const{user_name}= this.state
         axios.put('/api/user', {user_name})
         .then((res)=>{
-            console.log(res.data)
+            console.log('success')
         })
     }
 

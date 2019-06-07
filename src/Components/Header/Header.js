@@ -50,7 +50,7 @@ handleLogout=(e)=>{
 }
 
     render(){
-        console.log(this.props)
+       
         return(
             <>
             <Div>
@@ -65,7 +65,7 @@ handleLogout=(e)=>{
 
 
             </Div>
-            {this.state.loginModuleSeen ? <Login handleToggle={this.handleLoginToggle} /> : null}
+            {this.state.loginModuleSeen ? <Login handleToggle={this.handleLoginToggle} registerToggle={this.handleRegisterToggle} /> : null}
             {this.state.registerModuleSeen? <RegisterForm registerToggle={this.handleRegisterToggle}/> : null}
             </>
         )
