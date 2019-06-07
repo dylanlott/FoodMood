@@ -6,10 +6,6 @@ import {connect} from 'react-redux'
 import axios from 'axios'
 
 const Dishes = (props)=>{
-   
-
-
- 
     return(
         <DishName to={`/restaurant/${props.dishId}`}>
         <div> 

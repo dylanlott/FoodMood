@@ -3,6 +3,8 @@ import Header from '../Header/Header';
 import axios from 'axios'
 import Dishes from '../Dishes/Dishes'
 import styled from 'styled-components'
+import {connect} from 'react-redux'
+import {getFavorites, toggleUpdated} from '../../redux/reducers/userReducer'
 
 
 class Dashboard extends Component{
@@ -21,6 +23,21 @@ componentDidMount=()=>{
             dishes: res.data
         })
     })
+    
+  
+}
+
+componentDidUpdate=()=>{
+    if(this.props.user_name && !this.props.updated){
+        let {id}= this.props
+        id= parseInt(id)
+        axios.get(`/api/favorite/${id}`)
+        .then((res)=>{
+           console.log(res.data)
+           this.props.getFavorites(res.data) && this.props.toggleUpdated()
+        })
+    }
+
 }
 
 //gets all dishes in database
@@ -48,6 +65,7 @@ getCategory = (category) => {
    }
 
     render(){
+        console.log(this.props)
         const dishes= this.state.dishes.map((dish, i,j)=>{
             return(
               
@@ -79,8 +97,11 @@ getCategory = (category) => {
         )
     }
 }
+const mapStateToProps=(reduxState)=>{
+    return reduxState
+}
 
-export default Dashboard
+export default connect(mapStateToProps, {getFavorites, toggleUpdated})(Dashboard)
 
 
 const Div= styled.div`
@@ -104,7 +125,7 @@ width: 3em;
 
 
 @media(max-width:400px){
-width: 10em;
+min-width: 7em;
 height: 35px;
 left: 201px;
 top: 32px;
@@ -114,6 +135,7 @@ border-radius: 16px;
 opacity: .5;
 margin-left: 1.3em;
 display: flex;
+justify-content: center;
 
 ::webkit-scrollbar{display:none}
 }

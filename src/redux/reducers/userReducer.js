@@ -1,12 +1,18 @@
 const initialState={
     user_name: '',
-    id: ''
+    id: '',
+    favorited: false,
+    favorites:[],
+    updated: false
     
 }
 
 
 const UPDATE_USER= 'UPDATE_USER'
 const LOGOUT_USER= 'LOGOUT_USER'
+const TOGGLE_FAVORITE= 'TOGGLE_FAVORITE'
+const GET_FAVORITES= 'GET_FAVORITES'
+const TOGGLE_UPDATED= 'TOGGLE_UPDATED'
 
 //build out reducer
 
@@ -24,6 +30,25 @@ export function logoutUser(){
     }
 }
 
+export function toggleFavorite(){
+    return{
+        type: TOGGLE_FAVORITE
+    }
+}
+
+export function getFavorites(favorites){
+    return{
+        type: GET_FAVORITES,
+        payload: favorites
+    }
+}
+
+export function toggleUpdated(){
+    return{
+        type: TOGGLE_UPDATED
+    }
+}
+
 export default function reducer(state= initialState, action){
     switch (action.type){
         case UPDATE_USER:
@@ -31,6 +56,14 @@ export default function reducer(state= initialState, action){
             return {...state, user_name, id}
         case LOGOUT_USER:
             return{...initialState}
+        case TOGGLE_FAVORITE:
+            let newFavorited= !state.favorited
+            return{...state, favorited: newFavorited}
+        case GET_FAVORITES:
+            return{...state, ...action.payload}
+        case TOGGLE_UPDATED:
+            let newUpdated= !state.updated
+            return{...state, updated: true}
         default:
             return state
 

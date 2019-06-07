@@ -1,2 +1,2 @@
 delete from favorites
-where user_id= ${id} and dish= ${dish};
+where user_id= $1 and dish= $2;

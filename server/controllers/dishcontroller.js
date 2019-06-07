@@ -67,9 +67,12 @@ module.exports={
 
     deleteFavorite: (req, res)=>{
         const db= req.app.get('db')
-        const{id, dish}= req.params
-
-        db.dishes.delete_favorite(+req.params.id,  )
+        console.log(req.params)
+      
+        db.dishes.delete_favorite(+req.params.id, +req.query.dish)
+        .then((dbRes)=>{
+            res.status(200).send('Removed from favorites')
+        })
     }
 
     

@@ -57,7 +57,7 @@ class LoginForm extends Component{
             <Div>
                 <h1>Log in to FoodMood</h1>
                 <Form onSubmit={this.handleUserLogin}>
-                    <Input type='text' name='user_name' placeholder='username' onChange={this.handleLoginInfoUpdate}/>
+                    <Input type='text' name='user_name' placeholder='user name' onChange={this.handleLoginInfoUpdate}/>
                     <Input type='password' name='user_password' placeholder='password' onChange={this.handleLoginInfoUpdate}/>
                     <Button onClick={this.handleUserLogin}>Log In</Button>
                 </Form>
@@ -111,5 +111,6 @@ border-radius: 6px;
 border: none;
 border-bottom: 1px solid lightgray;
 font-size: 20px;
+padding-left: 25%;
 
 `

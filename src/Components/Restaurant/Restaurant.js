@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import axios from 'axios'
 import styled from 'styled-components'
 import {connect} from 'react-redux'
+import {toggleFavorite} from '../../redux/reducers/userReducer'
 
 class Restaurant extends Component{
 
@@ -29,11 +30,23 @@ componentDidMount(){
 
 //adds dish to users favorites table
 addToFavorites=(e)=>{
+   console.log('here')
     
    axios.post('/api/favorite', {user_id: this.props.id, dish: this.state.dish.dish_id} )
    .then((res)=>{
        console.log('Added to favorites')
+       this.props.toggleFavorite()
    })
+   .catch(()=>{
+       window.alert('Please login to favorite items')
+   })
+}
+
+unFavorite=(e)=>{
+    axios.delete(`/api/favorite/${this.props.id}?dish=${this.state.dish.dish_id}` )
+    .then((res)=>{
+        this.props.toggleFavorite()
+    })
 }
 
 
@@ -49,7 +62,10 @@ render(){
                 <p>{dish.rest_name}</p>
                 <p>{dish.rest_address}</p>
                 <p>{`${dish.rest_city} ${dish.rest_state} ${dish.rest_zip}`}</p>
-                <button onClick={this.addToFavorites}> Favorite </button>
+                {!this.props.favorited ?
+                <button onClick={this.addToFavorites}> 
+                Favorite </button>
+                : <button onClick={this.unFavorite}>Unfavorite</button>}
             </Div>
         )
     }
@@ -57,7 +73,7 @@ render(){
 const mapStateToProps=(reduxState)=>{
     return reduxState
 }
-export default connect(mapStateToProps)(Restaurant)
+export default connect(mapStateToProps, {toggleFavorite})(Restaurant)
 
 const Div =styled.div`
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap');
