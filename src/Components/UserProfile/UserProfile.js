@@ -30,7 +30,7 @@ handleUpdateInfoToggle=(e)=>{
                 ? <UpdateInfo updateInfoSeen={this.updateInfoSeen} />
                 : null}
                 
-                <Favorites />
+                <Favorites id={this.props.id} />
             </div>
 
         )

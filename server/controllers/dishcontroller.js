@@ -50,6 +50,27 @@ module.exports={
         .catch(error =>{
             if(error) throw error
         })
+    },
+
+    getUserFavorites: (req, res)=>{
+        const db= req.app.get('db')
+        const {id}= req.params
+        
+        db.dishes.get_user_favorites(+req.params.id)
+        .then((dbRes)=>{
+            res.status(200).send(dbRes)
+        })
+        .catch(error =>{
+            if(error) throw error
+        })
+    },
+
+    deleteFavorite: (req, res)=>{
+        const db= req.app.get('db')
+        const{id, dish}= req.params
+
+        db.dishes.delete_favorite(+req.params.id,  )
     }
+
     
 }
