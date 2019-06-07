@@ -80,6 +80,8 @@ const mapStateToProps= reduxState =>{
 export default connect(mapStateToProps, {logoutUser})(Header)
 
 const Button= styled.button`
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap');
+font-family: 'Noto Sans TC', sans-serif;
 background: palegreen;
 border-radius: 3px;
 border: 2px solid palegreen;
@@ -97,6 +99,8 @@ align-items: center;
 `
 
 const H1= styled.h1`
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap');
+font-family: 'Noto Sans TC', sans-serif;
 margin-left: 15px;
 margin-right: 30px;
 `

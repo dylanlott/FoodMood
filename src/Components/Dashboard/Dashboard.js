@@ -23,6 +23,7 @@ componentDidMount=()=>{
     })
 }
 
+//gets all dishes in database
 getAll=()=>{
     axios.get('/api/dishes')
     .then((res)=>{
@@ -33,6 +34,7 @@ getAll=()=>{
     })
 }
 
+//passes in category from button selected and returns dishes that match selected category
 getCategory = (category) => {
     
     axios.get(`/api/${category}`)
@@ -55,7 +57,7 @@ getCategory = (category) => {
         })
         return(
             <>
-                <Header/>
+            <Header/>
             <Div1>
                 <Button onClick={()=>this.getAll()}>All</Button>
                 <Button onClick={()=> this.getCategory('Burger')}>Burgers</Button>
@@ -93,6 +95,7 @@ width: 100%;
 height: 36px;
 display: flex;
 overflow: auto;
+vertical-align: top;
 `
 const Button =styled.button`
 background: #DEDEDE;
@@ -109,7 +112,7 @@ top: 32px;
 background: #DEDEDE;
 border-radius: 16px;
 opacity: .5;
-margin-left: 1.2em;
+margin-left: 1.3em;
 display: flex;
 
 ::webkit-scrollbar{display:none}

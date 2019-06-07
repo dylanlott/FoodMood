@@ -13,6 +13,8 @@ constructor(){
     }
 }
 
+
+//Returns associated dish and restaurant information for dish selected
 componentDidMount(){
     
     const {id}= this.props.match.params
@@ -24,6 +26,8 @@ componentDidMount(){
         })
     })
 }
+
+//adds dish to users favorites table
 addToFavorites=(e)=>{
     
    axios.post('/api/favorite', {user_id: this.props.id, dish: this.state.dish.dish_id} )
@@ -31,8 +35,10 @@ addToFavorites=(e)=>{
        console.log('Added to favorites')
    })
 }
+
+
 render(){
-        console.log(this.state.dish)
+        
         const {dish}= this.state
         return(
             <Div>

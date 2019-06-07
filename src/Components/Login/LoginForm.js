@@ -15,15 +15,12 @@ class LoginForm extends Component{
 		}
     }
 
+    //this method closes the login module and opens the register module when a user clicks the create account button 
     handleToggle=(e)=>{
-        
-        // this.setState({
-        //     moduleSeen: !this.state.moduleSeen
-        // })
         this.props.registerToggle()
-        
     }
     
+    //this method keeps track of values inputted in input fields
     handleLoginInfoUpdate=(e)=>{
         this.setState({
             [e.target.name]: e.target.value
@@ -31,13 +28,13 @@ class LoginForm extends Component{
         
     }
 
-
+    //method that runs login method on authcontroller to login user, closes login module, and resets state which causes the site to conditionally render a new logged in view.
     handleUserLogin=(e)=>{
         e.preventDefault()
         const {user_name, user_password}= this.state
         axios.post('/auth/login', {user_name, user_password})
         .then((res)=>{
-            // UPDATE_USER
+            
             
             this.props.updateUser(res.data)
             this.props.handleToggle()
