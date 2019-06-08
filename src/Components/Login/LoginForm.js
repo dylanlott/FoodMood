@@ -77,19 +77,41 @@ const Div= styled.div`
 
 font-family: 'Noto Sans TC', sans-serif;
 position: fixed;
+top: 3;
+right: 0;
+background-color: white;
+z-index: 999;
+height: 50vh;
+width: 50vw;
+border-bottom: solid 3px rgb(222, 225, 229);
+border-left: solid 3px rgb(222, 225, 229);
+
+@media(max-width:400px){
+position: fixed;
 top: 10;
+left:0;
+height: 40vh;
+width: 100vw;
 background-color: white;
 z-index: 999
-
+border-bottom: solid 3px rgb(222, 225, 229);
+border-top: solid 3px rgb(222, 225, 229);
+}
 
 `
 
 const Form= styled.form`
 display: flex;
 flex-direction: column;
-width: 100vw;
 align-items: center;
 
+@media(max-width:400px){
+
+display: flex;
+flex-direction: column;
+width: 100vw;
+align-items: center;
+}
 `
 
 const Button= styled.button`

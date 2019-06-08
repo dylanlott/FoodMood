@@ -23,17 +23,17 @@ handleUpdateInfoToggle=(e)=>{
 
     render(){
         return(
-            <div>
+            <Div>
                 <h1>UserProfile</h1>
                 <Header />
-                <h3>Hello {this.props.user_name}</h3>
+                <H3>Hello {this.props.user_name}</H3>
                 <Button onClick={this.handleUpdateInfoToggle}>Update Username</Button>
                 {this.state.updateInfoSeen 
                 ? <UpdateInfo updateInfoSeen={this.updateInfoSeen} />
                 : null}
                 
                 <Favorites id={this.props.id} />
-            </div>
+            </Div>
 
         )
     }
@@ -53,4 +53,13 @@ color: white;
 margin: .5em .5em;
 padding: 0.25em 1em;
 height: 2em;
+`
+const H3= styled.h3`
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap');
+color: black;
+font-family: 'Noto Sans TC', sans-serif;
+`
+
+const Div= styled.div`
+background-color: whitesmoke;
 `

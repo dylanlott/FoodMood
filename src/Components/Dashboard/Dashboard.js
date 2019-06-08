@@ -90,13 +90,13 @@ getCategory = (category) => {
                 <Button onClick={()=>this.getAll()}>All</Button>
                 <Button onClick={()=> this.getCategory('Burger')}>Burgers</Button>
                 <Button onClick={()=> this.getCategory('Brunch')}>Brunch</Button>
-                <Button>Mexican</Button>
+                <Button onClick={()=> this.getCategory('Mexican')}>Mexican</Button>
                 <Button>Pizza</Button>
                 <Button>Sushi</Button>
                 <Button>Happy Hour</Button>
                 <Button>Healthy</Button>
                 <Button>Pasta</Button>
-                <Button>Dessert</Button>
+                <Button onClick={()=> this.getCategory('Dessert')}>Dessert</Button>
 
                 
             </Div1>
@@ -116,22 +116,38 @@ export default connect(mapStateToProps, {getFavorites, toggleUpdated, toggleFavo
 
 const Div= styled.div`
 display: flex;
+flex-wrap: wrap;
+
+
+
+@media(max-width:400px){
+display: flex;
 flex-direction: column;
 align-items: center;
+}
+
 
 `
 const Div1= styled.div`
+width: 100%;
+display: flex;
+overflow: auto;
+
+@media(max-width: 400px){
 
 width: 100%;
 height: 36px;
 display: flex;
 overflow: auto;
 vertical-align: top;
+}
 `
 const Button =styled.button`
 background: #DEDEDE;
 border-radius: 20px;
-width: 3em;
+min-width: 7em;
+margin-left: 1.5em;
+height: 40px;
 
 
 @media(max-width:400px){

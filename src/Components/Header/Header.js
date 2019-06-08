@@ -57,8 +57,8 @@ handleLogout=(e)=>{
             <Logo to='/'><H1>FoodMood</H1></Logo>
 
             {!this.props.user_name 
-            ? (<><Button onClick={this.handleLoginToggle}>login</Button>
-            <Button onClick={this.handleRegisterToggle}>register</Button></>) 
+            ? (<div><Button onClick={this.handleLoginToggle}>login</Button>
+            <Button onClick={this.handleRegisterToggle}>register</Button></div>) 
             :(<><Link to={`/user/${this.props.id}`}><H3>{this.props.user_name}</H3></Link>
                 <Button onClick={this.handleLogout}>Logout</Button></>)}
             
@@ -96,11 +96,18 @@ height: 50%;
 
 `
 const Div= styled.div`
+display:flex;
+align-items: center;
+justify-content: space-between;
+
+@media(max-width:400px){
 background: whitesmoke;
 width: 100vw;
 display: flex;
 align-items: center;
+}
 `
+
 
 const H1= styled.h1`
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap');
@@ -112,4 +119,5 @@ margin-right: 30px;
 const H3= styled.h3`
 color: black;
 text-decoration: none;
+margin-right: 10px;
 `
