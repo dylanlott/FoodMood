@@ -60,10 +60,9 @@ export default function reducer(state= initialState, action){
             let newFavorited= !state.favorited
             return{...state, favorited: newFavorited}
         case GET_FAVORITES:
-            return{...state, ...action.payload}
+            return{...state, favorites: action.payload}
         case TOGGLE_UPDATED:
-            let newUpdated= !state.updated
-            return{...state, updated: true}
+             return{...state, updated: true}
         default:
             return state
 

@@ -4,7 +4,7 @@ import axios from 'axios'
 import Dishes from '../Dishes/Dishes'
 import styled from 'styled-components'
 import {connect} from 'react-redux'
-import {getFavorites, toggleUpdated} from '../../redux/reducers/userReducer'
+import {getFavorites, toggleUpdated, toggleFavorite} from '../../redux/reducers/userReducer'
 
 
 class Dashboard extends Component{
@@ -33,8 +33,17 @@ componentDidUpdate=()=>{
         id= parseInt(id)
         axios.get(`/api/favorite/${id}`)
         .then((res)=>{
-           console.log(res.data)
-           this.props.getFavorites(res.data) && this.props.toggleUpdated()
+            this.props.getFavorites(res.data) && this.props.toggleUpdated()
+           
+           
+           for(let i=0; i<this.props.favorites.length; i++){
+               if(this.props.favorites[i].dish_id){
+                   console.log('found favorite: ', this.props.favorites[i].dish_id)
+                   return this.props.toggleFavorite()
+               }
+           }
+           
+        
         })
     }
 
@@ -65,7 +74,7 @@ getCategory = (category) => {
    }
 
     render(){
-        console.log(this.props)
+        
         const dishes= this.state.dishes.map((dish, i,j)=>{
             return(
               
@@ -73,6 +82,7 @@ getCategory = (category) => {
                
             )
         })
+        console.log(this.props)
         return(
             <>
             <Header/>
@@ -101,7 +111,7 @@ const mapStateToProps=(reduxState)=>{
     return reduxState
 }
 
-export default connect(mapStateToProps, {getFavorites, toggleUpdated})(Dashboard)
+export default connect(mapStateToProps, {getFavorites, toggleUpdated, toggleFavorite})(Dashboard)
 
 
 const Div= styled.div`

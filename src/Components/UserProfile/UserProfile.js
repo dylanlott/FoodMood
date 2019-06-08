@@ -3,6 +3,7 @@ import UpdateInfo from './UpdateInfo';
 import Favorites from './Favorites';
 import {connect} from 'react-redux';
 import styled from 'styled-components'
+import Header from '../Header/Header'
 
 
 class UserProfile extends Component{
@@ -24,6 +25,7 @@ handleUpdateInfoToggle=(e)=>{
         return(
             <div>
                 <h1>UserProfile</h1>
+                <Header />
                 <h3>Hello {this.props.user_name}</h3>
                 <Button onClick={this.handleUpdateInfoToggle}>Update Username</Button>
                 {this.state.updateInfoSeen 

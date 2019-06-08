@@ -54,7 +54,7 @@ handleLogout=(e)=>{
         return(
             <>
             <Div>
-            <H1>FoodMood</H1>
+            <Logo to='/'><H1>FoodMood</H1></Logo>
 
             {!this.props.user_name 
             ? (<><Button onClick={this.handleLoginToggle}>login</Button>
@@ -79,6 +79,10 @@ const mapStateToProps= reduxState =>{
 
 export default connect(mapStateToProps, {logoutUser})(Header)
 
+const Logo=styled(Link)`
+color: black;
+text-decoration: none;
+`
 const Button= styled.button`
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap');
 font-family: 'Noto Sans TC', sans-serif;
