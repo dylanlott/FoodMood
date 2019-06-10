@@ -38,8 +38,13 @@ height: 38vh;
 width: 20vw;
 border-radius: 6px;
 
-@media(max-width:700px){
-height: 30vh;
+
+@media(max-width:1025px){
+    height: 20vh;
+}
+
+@media(max-width:770px){
+height: 25vh;
 width: 35vw;
 border-radius: 6px;
 margin-top: 1em;
@@ -47,7 +52,7 @@ margin-left: 5em;
 }
 
 
-@media(max-width:400px){
+@media(max-width:420px){
 height: 30%;
 width: 85%;
 border-radius: 6px;
@@ -72,7 +77,7 @@ width: 101%;
 height: 10em;
 border-radius: 6px;
 
-@media(max-width:400px){
+@media(max-width:420px){
 width: 101%;
 height: 12em;
 border-radius: 6px;

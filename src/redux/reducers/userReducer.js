@@ -30,9 +30,10 @@ export function logoutUser(){
     }
 }
 
-export function toggleFavorite(){
+export function toggleFavorite(toggle){
     return{
-        type: TOGGLE_FAVORITE
+        type: TOGGLE_FAVORITE,
+        payload: toggle
     }
 }
 
@@ -57,8 +58,8 @@ export default function reducer(state= initialState, action){
         case LOGOUT_USER:
             return{...initialState}
         case TOGGLE_FAVORITE:
-            let newFavorited= !state.favorited
-            return{...state, favorited: newFavorited}
+            const {favorited}= action.payload
+            return{...state, favorited}
         case GET_FAVORITES:
             return{...state, favorites: action.payload}
         case TOGGLE_UPDATED:

@@ -16,16 +16,27 @@ constructor(){
 
 
 //Returns associated dish and restaurant information for dish selected
-componentDidMount(){
+componentDidMount= async()=>{
     
     const {id}= this.props.match.params
-    axios.get(`/api/restaurant/${id}`)
+    await axios.get(`/api/restaurant/${id}`)
     .then(res =>{
         this.setState({
             dish: res.data
             
         })
     })
+
+    const foundFavorite= this.props.favorites.findIndex(element => element.dish_id == this.state.dish.dish_id)
+
+    if(foundFavorite !== -1){
+        this.props.toggleFavorite({favorited: true})
+    }
+    else{
+        this.props.toggleFavorite({favorited: false})
+    }
+
+    console.log(foundFavorite)
 }
 
 //adds dish to users favorites table
@@ -35,7 +46,8 @@ addToFavorites=(e)=>{
    axios.post('/api/favorite', {user_id: this.props.id, dish: this.state.dish.dish_id} )
    .then((res)=>{
        console.log('Added to favorites')
-       this.props.toggleFavorite()
+       this.props.favorites.push(this.state.dish)
+       this.props.toggleFavorite({favorited:true})
    })
    .catch(()=>{
        window.alert('Please login to favorite items')
@@ -45,13 +57,18 @@ addToFavorites=(e)=>{
 unFavorite=(e)=>{
     axios.delete(`/api/favorite/${this.props.id}?dish=${this.state.dish.dish_id}` )
     .then((res)=>{
-        this.props.toggleFavorite()
+        const deletedFavorite= this.props.favorites.findIndex(element => element.dish_id=== this.state.dish.dish_id)
+
+        if(deletedFavorite !== -1){
+        this.props.favorites.splice(deletedFavorite, 1)
+        this.props.toggleFavorite({favorited:false})
+        }
     })
 }
 
 
 render(){
-        
+        console.log(this.state)
         const {dish}= this.state
         return(
             <Div>

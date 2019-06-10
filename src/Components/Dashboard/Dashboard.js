@@ -35,14 +35,6 @@ componentDidUpdate=()=>{
         .then((res)=>{
             this.props.getFavorites(res.data) && this.props.toggleUpdated()
            
-           
-           for(let i=0; i<this.props.favorites.length; i++){
-               if(this.props.favorites[i].dish_id){
-                   console.log('found favorite: ', this.props.favorites[i].dish_id)
-                   return this.props.toggleFavorite()
-               }
-           }
-           
         
         })
     }
@@ -120,7 +112,9 @@ flex-wrap: wrap;
 
 
 
-@media(max-width:400px){
+
+
+@media(max-width:420px){
 display: flex;
 flex-direction: column;
 align-items: center;
