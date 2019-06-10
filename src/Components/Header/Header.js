@@ -57,8 +57,8 @@ handleLogout=(e)=>{
             <Logo to='/'><H1>FoodMood</H1></Logo>
 
             {!this.props.user_name 
-            ? (<div><Button onClick={this.handleLoginToggle}>login</Button>
-            <Button onClick={this.handleRegisterToggle}>register</Button></div>) 
+            ? (<Div1><Button onClick={this.handleLoginToggle}>login</Button>
+            <Button onClick={this.handleRegisterToggle}>register</Button></Div1>) 
             :(<><Link to={`/user/${this.props.id}`}><H3>{this.props.user_name}</H3></Link>
                 <Button onClick={this.handleLogout}>Logout</Button></>)}
             
@@ -82,17 +82,27 @@ export default connect(mapStateToProps, {logoutUser})(Header)
 const Logo=styled(Link)`
 color: black;
 text-decoration: none;
+
+@media(max-width:320px){
+    font-size: .7em;
+    margin-right: 0;
+}
 `
 const Button= styled.button`
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap');
 font-family: 'Noto Sans TC', sans-serif;
-background: palegreen;
+background: #d0e6a5;
 border-radius: 3px;
-border: 2px solid palegreen;
+border: 2px solid #c5df16;
 color: white;
 margin: 0 .5em;
 padding: 0.25em 1em;
 height: 50%;
+
+@media(max-width:320px){
+    width: 44%;
+    margin-right: 0;
+}
 
 `
 const Div= styled.div`
@@ -104,9 +114,16 @@ justify-content: space-between;
 background: whitesmoke;
 width: 100vw;
 display: flex;
-align-items: center;
+
+
 }
 `
+const Div1= styled.div`
+@media(max-width:400px){
+    background: whitesmoke;
+    width: 100vw;
+    display: flex;
+`    
 
 
 const H1= styled.h1`

@@ -41,8 +41,8 @@ app.get('/auth/logout', auth_ctrl.logout)
 
 
 //Endpoints for dishes
-app.get('/api/dishes', dish_ctrl.getAllDishes)
-app.get('/api/:category', dish_ctrl.getCategory)
+app.get('/api/dishes/:city', dish_ctrl.getAllDishes)
+app.get('/api/:city/:category', dish_ctrl.getCategory)
 app.get('/api/restaurant/:id', dish_ctrl.getRestaurant)
 
 //Endpoints for user profile

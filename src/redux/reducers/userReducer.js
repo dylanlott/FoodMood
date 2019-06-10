@@ -3,7 +3,8 @@ const initialState={
     id: '',
     favorited: false,
     favorites:[],
-    updated: false
+    updated: false,
+    city: ''
     
 }
 
@@ -13,6 +14,8 @@ const LOGOUT_USER= 'LOGOUT_USER'
 const TOGGLE_FAVORITE= 'TOGGLE_FAVORITE'
 const GET_FAVORITES= 'GET_FAVORITES'
 const TOGGLE_UPDATED= 'TOGGLE_UPDATED'
+const GET_CITY= 'GET_CITY'
+
 
 //build out reducer
 
@@ -50,6 +53,15 @@ export function toggleUpdated(){
     }
 }
 
+export function getCity(city){
+    return{
+        type: GET_CITY,
+        payload: city
+    }
+}
+
+
+
 export default function reducer(state= initialState, action){
     switch (action.type){
         case UPDATE_USER:
@@ -64,6 +76,8 @@ export default function reducer(state= initialState, action){
             return{...state, favorites: action.payload}
         case TOGGLE_UPDATED:
              return{...state, updated: true}
+        case GET_CITY:
+            return{...state, city: action.payload}
         default:
             return state
 

@@ -16,7 +16,8 @@ class Dashboard extends Component{
     }
 
 componentDidMount=()=>{
-    axios.get('/api/dishes')
+    console.log(this.props.city)
+    axios.get(`/api/dishes/${this.props.city}`)
     .then((res)=>{
         
         this.setState({
@@ -41,9 +42,9 @@ componentDidUpdate=()=>{
 
 }
 
-//gets all dishes in database
+//gets all dishes in database that match users inputted city
 getAll=()=>{
-    axios.get('/api/dishes')
+    axios.get(`/api/dishes/${this.props.city}`)
     .then((res)=>{
         
         this.setState({
@@ -55,7 +56,7 @@ getAll=()=>{
 //passes in category from button selected and returns dishes that match selected category
 getCategory = (category) => {
     
-    axios.get(`/api/${category}`)
+    axios.get(`/api/${this.props.city}/${category}`)
     .then(dishes => {
        
      this.setState({
@@ -67,7 +68,7 @@ getCategory = (category) => {
 
     render(){
         
-        const dishes= this.state.dishes.map((dish, i,j)=>{
+        const dishes= this.state.dishes.map((dish, i)=>{
             return(
               
                 <Dishes key={i} dishName={dish.dish_name} imgUrl={dish.img_url} dishDesc={dish.dish_description} dishId={dish.dish_id}/>
@@ -109,7 +110,7 @@ export default connect(mapStateToProps, {getFavorites, toggleUpdated, toggleFavo
 const Div= styled.div`
 display: flex;
 flex-wrap: wrap;
-
+margin-right: .5em;
 
 
 

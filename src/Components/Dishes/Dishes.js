@@ -39,7 +39,7 @@ width: 20vw;
 border-radius: 6px;
 
 
-@media(max-width:1025px){
+@media(max-width:1024px){
     height: 20vh;
 }
 
@@ -68,6 +68,8 @@ align-content: center;
 justify-content: center;
 height: 5em;
 
+
+
 @media(max-width:400px){
     height:3em;
 }
@@ -89,6 +91,10 @@ margin: 0 0;
 `
 const P= styled.p`
 
+padding: 0em;
+display: flex;
+justify-content: center;
+align-items: center;
 
 @media(max-width:400px){
 margin: 0 0;

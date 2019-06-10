@@ -1,8 +1,9 @@
 module.exports={
     getAllDishes: (req, res)=>{
         const dbInstance= req.app.get('db')
+        const{city}= req.params
 
-        dbInstance.dishes.get_all_dishes()
+        dbInstance.dishes.get_all_dishes({city})
         .then(dishes =>{
             res.status(200).send(dishes)
         })
@@ -13,10 +14,10 @@ module.exports={
 
     getCategory: (req, res)=>{
         const dbInstance =req.app.get('db')
-        const {category}= req.params
+        const {category, city}= req.params
         
 
-        dbInstance.dishes.get_category({category})
+        dbInstance.dishes.get_category({category, city})
         .then((dishes) =>{
             res.status(200).send(dishes)
         })
