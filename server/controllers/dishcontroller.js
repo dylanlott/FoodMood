@@ -30,7 +30,7 @@ module.exports={
         const db = req.app.get('db')
 
         const {id} = req.params
-        console.log(req.params.id)
+       
         db.dishes.get_restaurant({id})
       
        
@@ -47,7 +47,7 @@ module.exports={
     addFavorite:(req, res)=>{
         const db= req.app.get('db')
         const {user_id, dish}= req.body
-        console.log(req.body)
+       
 
         db.dishes.add_favorite({user_id, dish})
         .then((dbRes)=> {

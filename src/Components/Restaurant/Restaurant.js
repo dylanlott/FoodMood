@@ -36,7 +36,7 @@ componentDidMount=async()=>{
 
 
     const foundFavorite= this.props.favorites.findIndex(element => element.dish_id === this.state.dish.dish_id)
-    console.log(foundFavorite)
+    
     if(foundFavorite !== -1){
         this.props.toggleFavorite({favorited: true})
     }
@@ -53,7 +53,6 @@ addToFavorites=(e)=>{
     
    axios.post('/api/favorite', {user_id: this.props.id, dish: this.state.dish.dish_id} )
    .then((res)=>{
-       console.log('Added to favorites')
        this.props.favorites.push(this.state.dish)
        this.props.toggleFavorite({favorited:true})
    })
@@ -80,7 +79,7 @@ unFavorite=(e)=>{
 render(){
         
         const {dish}= this.state
-        console.log(dish.dish_id)
+       
         return(
             <Div>
                 

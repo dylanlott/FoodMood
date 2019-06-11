@@ -41,6 +41,9 @@ border-radius: 6px;
 
 @media(max-width:1024px){
     height: 20vh;
+    width: 30vw;
+    margin-left: 8em;
+    margin-top: 3em;
 }
 
 @media(max-width:770px){
@@ -60,6 +63,7 @@ margin-top: 1em;
 margin-left:0;
 
 }
+
 `
 
 const Div= styled.div`
