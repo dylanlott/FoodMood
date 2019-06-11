@@ -23,7 +23,7 @@ handleInput=(e)=>{
 
 
     render(){
-        console.log(this.state)
+       
         return(
             
             <>
@@ -42,12 +42,12 @@ handleInput=(e)=>{
                     <p>Search for dishes in your city</p>
                 </>
                 <>
-                    <h4>2: Filter by category/FoodMood</h4>
+                    <h4>2: Filter by category</h4>
                     <p> See all dishes or dishes for a specific category of food </p>
                 </>
                 <>
-                    <h4>3:Get restaurant information for the dish that stands out to you!</h4>
-                    <p>See the dish name and corresponding restaurant address for the dish you're in the mood for</p>
+                    <h4>3: Get restaurant info for the dish that stands out to you!</h4>
+                    <p>See the dish name and its restaurant address for the dish you're in the mood for</p>
                 </>
                 </Div1>
                 </ParentDiv>
@@ -64,7 +64,7 @@ const Div = styled.div`
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap');
 font-family: 'Noto Sans TC', sans-serif;
 width: 100%;
-background: linear-gradient(to top right, rgb(174, 249, 232), rgb(246, 247, 239));
+background: linear-gradient(to bottom, rgb(174, 249, 232), rgb(246, 247, 239));
 height: 25vh;
 
 display: flex;
@@ -83,6 +83,7 @@ width: 60%;
 border-radius: 6px;
 height: 2em;
 padding-left: 15%;
+font-size: 1em;
 
 `
 const Button= styled.button`
@@ -100,9 +101,25 @@ width: 100%;
 display: flex;
 justify-content: center;
 
+@media(max-width:400px){
+width: 100%;
+display: flex;
+justify-content: center;
+}
+
+
+
 `
 const Div1= styled.div`
+width: 18%;
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+
+
+@media(max-width:420px){
 width: 80%;
 display: flex;
 flex-direction: column;
+}
 `

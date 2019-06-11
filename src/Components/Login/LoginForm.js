@@ -115,9 +115,9 @@ align-items: center;
 `
 
 const Button= styled.button`
-background: palegreen;
+background: #d0e6a5;
 border-radius: 3px;
-border: 2px solid palegreen;
+border: 2px solid #c5df16;
 color: white;
 margin: .5em .5em;
 padding: 0.25em 1em;

@@ -2,7 +2,7 @@ module.exports={
     getAllDishes: (req, res)=>{
         const dbInstance= req.app.get('db')
         const{city}= req.params
-
+       
         dbInstance.dishes.get_all_dishes({city})
         .then(dishes =>{
             res.status(200).send(dishes)
@@ -26,18 +26,23 @@ module.exports={
         })
     },
 
-    getRestaurant: (req, res)=>{
-        const db= req.app.get('db')
-        const {id}= req.params
+    getRestaurant:(req, res)=>{
+        const db = req.app.get('db')
 
+        const {id} = req.params
+        console.log(req.params.id)
         db.dishes.get_restaurant({id})
+      
+       
         .then((dbRes)=>{
+            
             res.status(200).send(dbRes[0])
         })
         .catch(error =>{
             if(error) throw error
         })
     },
+
 
     addFavorite:(req, res)=>{
         const db= req.app.get('db')

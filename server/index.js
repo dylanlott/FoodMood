@@ -9,9 +9,15 @@ const dish_ctrl= require('./controllers/dishcontroller')
 
 const app= express()
 
+// function logger (req, res, next){
+//     console.log('THIS SHIT RAN', req.method, req.path)
+//     next()
+// }
+
 const {SESSION_SECRET, SERVER_PORT, CONNECTION_STRING}= process.env
 
 app.use(express.json())
+// app.use(logger)
 
 //Session set up
 
@@ -42,8 +48,10 @@ app.get('/auth/logout', auth_ctrl.logout)
 
 //Endpoints for dishes
 app.get('/api/dishes/:city', dish_ctrl.getAllDishes)
-app.get('/api/:city/:category', dish_ctrl.getCategory)
 app.get('/api/restaurant/:id', dish_ctrl.getRestaurant)
+
+
+
 
 //Endpoints for user profile
 
@@ -54,5 +62,6 @@ app.post('/api/favorite', dish_ctrl.addFavorite)
 app.get('/api/favorite/:id', dish_ctrl.getUserFavorites)
 app.delete('/api/favorite/:id', dish_ctrl.deleteFavorite)
 
+app.get('/api/:city/:category', dish_ctrl.getCategory)
 
 app.listen(SERVER_PORT, ()=> console.log(`${SERVER_PORT} points to griffindor`))

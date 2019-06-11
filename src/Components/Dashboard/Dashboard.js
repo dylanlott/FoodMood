@@ -16,7 +16,7 @@ class Dashboard extends Component{
     }
 
 componentDidMount=()=>{
-    console.log(this.props.city)
+    
     axios.get(`/api/dishes/${this.props.city}`)
     .then((res)=>{
         
@@ -30,6 +30,7 @@ componentDidMount=()=>{
 
 componentDidUpdate=()=>{
     if(this.props.user_name && !this.props.updated){
+        
         let {id}= this.props
         id= parseInt(id)
         axios.get(`/api/favorite/${id}`)
@@ -75,7 +76,7 @@ getCategory = (category) => {
                
             )
         })
-        console.log(this.props)
+        
         return(
             <>
             <Header/>

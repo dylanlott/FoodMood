@@ -16,19 +16,25 @@ constructor(){
 
 
 //Returns associated dish and restaurant information for dish selected
-componentDidMount= async()=>{
-    
+componentDidMount=async()=>{
     const {id}= this.props.match.params
     await axios.get(`/api/restaurant/${id}`)
     .then(res =>{
+    
+        
         this.setState({
             dish: res.data
             
         })
     })
+    .catch(err =>{
+        console.log(err)
+    })
+    
 
-    const foundFavorite= this.props.favorites.findIndex(element => element.dish_id == this.state.dish.dish_id)
 
+    const foundFavorite= this.props.favorites.findIndex(element => element.dish_id === this.state.dish.dish_id)
+    console.log(foundFavorite)
     if(foundFavorite !== -1){
         this.props.toggleFavorite({favorited: true})
     }
@@ -36,7 +42,7 @@ componentDidMount= async()=>{
         this.props.toggleFavorite({favorited: false})
     }
 
-    console.log(foundFavorite)
+    
 }
 
 //adds dish to users favorites table
@@ -64,12 +70,15 @@ unFavorite=(e)=>{
         this.props.toggleFavorite({favorited:false})
         }
     })
+
+  
 }
 
 
 render(){
-        console.log(this.state)
+        
         const {dish}= this.state
+        console.log(dish.dish_id)
         return(
             <Div>
                 
