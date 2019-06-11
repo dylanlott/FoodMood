@@ -60,7 +60,15 @@ width: 50vw;
 border-bottom: solid 3px rgb(222, 225, 229);
 border-left: solid 3px rgb(222, 225, 229);
 
-@media(max-width:400px){
+@media(max-width:1024px){
+    height: 23vh;
+}
+
+@media(max-width:768px){
+    height:30vh;
+}
+
+@media(max-width:414px){
 position: fixed;
 top: 10;
 left:0;
@@ -70,6 +78,15 @@ background-color: white;
 z-index: 999
 border-bottom: solid 3px rgb(222, 225, 229);
 border-top: solid 3px rgb(222, 225, 229);
+}
+
+@media(max-width:375px){
+    height:45vh;
+}
+
+@media(max-width:320px){
+    height: 51vh;
+}
 `
 
 const Form= styled.form`
