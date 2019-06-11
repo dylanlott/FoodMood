@@ -59,8 +59,8 @@ handleLogout=(e)=>{
             {!this.props.user_name 
             ? (<Div1><Button onClick={this.handleLoginToggle}>login</Button>
             <Button onClick={this.handleRegisterToggle}>register</Button></Div1>) 
-            :(<><Link to={`/user/${this.props.id}`}><H3>{this.props.user_name}</H3></Link>
-                <Button onClick={this.handleLogout}>Logout</Button></>)}
+            :(<Div2><H3 to={`/user/${this.props.id}`}>{this.props.user_name}</H3>
+                <Button onClick={this.handleLogout}>Logout</Button></Div2>)}
             
 
 
@@ -109,7 +109,7 @@ const Div= styled.div`
 display:flex;
 align-items: center;
 justify-content: space-between;
-
+border-bottom: solid rgb(200, 202, 206) 3px;
 @media(max-width:400px){
 background: whitesmoke;
 width: 100vw;
@@ -123,7 +123,17 @@ const Div1= styled.div`
     background: whitesmoke;
     width: 100vw;
     display: flex;
-`    
+`  
+
+const Div2= styled.div`
+display: flex;
+justify-content: space-between;
+align-items: center;
+
+@media(max-width:320px){
+    margin-right: .8em;
+}
+`
 
 
 const H1= styled.h1`
@@ -131,10 +141,16 @@ const H1= styled.h1`
 font-family: 'Noto Sans TC', sans-serif;
 margin-left: 15px;
 margin-right: 30px;
+
+@media(max-width:360px){
+    margin-right:15px;
+  
+}
 `
 
-const H3= styled.h3`
+const H3= styled(Link)`
 color: black;
 text-decoration: none;
 margin-right: 10px;
+font-size: 20px;
 `
