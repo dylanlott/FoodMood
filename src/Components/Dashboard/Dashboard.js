@@ -116,6 +116,7 @@ margin-right: .5em;
 
 
 
+
 @media(max-width:420px){
 display: flex;
 flex-direction: column;
@@ -128,6 +129,7 @@ const Div1= styled.div`
 width: 100%;
 display: flex;
 overflow: auto;
+margin-top: 1em;
 
 @media(max-width: 400px){
 
@@ -142,8 +144,9 @@ const Button =styled.button`
 background: #DEDEDE;
 border-radius: 20px;
 min-width: 7em;
-margin-left: 1.5em;
+margin-left: 2em;
 height: 40px;
+opacity: .5;
 
 
 @media(max-width:400px){
