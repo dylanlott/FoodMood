@@ -49,7 +49,7 @@ componentDidMount=async()=>{
 
 //adds dish to users favorites table
 addToFavorites=(e)=>{
-   console.log('here')
+  
     
    axios.post('/api/favorite', {user_id: this.props.id, dish: this.state.dish.dish_id} )
    .then((res)=>{
@@ -81,6 +81,7 @@ render(){
         const {dish}= this.state
        
         return(
+           
             <Div>
                 
                 <Img src={dish.img_url} alt='dish'/>
@@ -98,6 +99,7 @@ render(){
                 : <Icon.Heart size={40} style={{color:'red'}} onClick={this.unFavorite}/>}
                 </Heart>
             </Div>
+            
         )
     }
 }
@@ -105,6 +107,7 @@ const mapStateToProps=(reduxState)=>{
     return reduxState
 }
 export default connect(mapStateToProps, {toggleFavorite})(Restaurant)
+
 
 const Div =styled.div`
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap');

@@ -51,10 +51,10 @@ export default connect(mapStateToProps)(UserProfile)
 const Button= styled.button`
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap');
 font-family: 'Noto Sans TC', sans-serif;
-background: #d0e6a5;
+background:  #ed6c5c;
 border-radius: 3px;
-border: 2px solid #c5df16;
-color: white;
+border: 2px solid #ed6c5c;
+color: white
 margin: .5em .5em;
 padding: 0.25em 1em;
 height: 2em;
@@ -91,10 +91,10 @@ align-items: center;
 const Button1= styled(Link)`
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap');
 font-family: 'Noto Sans TC', sans-serif;
-background: #d0e6a5;
+background:  #ed6c5c;
 border-radius: 3px;
-border: 2px solid #c5df16;
-color: white;
+border: 2px solid #ed6c5c;
+color: white
 margin: .5em .5em;
 padding: 0.25em 1em;
 display: flex;

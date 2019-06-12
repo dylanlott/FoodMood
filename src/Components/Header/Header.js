@@ -6,6 +6,7 @@ import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 import axios from 'axios'
 import {logoutUser} from '../../redux/reducers/userReducer'
+import * as Icon from 'react-feather'
 
 class Header extends Component{
 constructor(){
@@ -59,7 +60,7 @@ handleLogout=(e)=>{
             {!this.props.user_name 
             ? (<Div1><Button onClick={this.handleLoginToggle}>login</Button>
             <Button onClick={this.handleRegisterToggle}>register</Button></Div1>) 
-            :(<Div2><H3 to={`/user/${this.props.id}`}>{this.props.user_name}</H3>
+            :(<Div2><H3 to={`/user/${this.props.id}`}><Span><Icon.User /></Span>{this.props.user_name}</H3>
                 <Button onClick={this.handleLogout}>Logout</Button></Div2>)}
             
 
@@ -80,7 +81,7 @@ const mapStateToProps= reduxState =>{
 export default connect(mapStateToProps, {logoutUser})(Header)
 
 const Logo=styled(Link)`
-color: black;
+color: whitesmoke;
 text-decoration: none;
 
 @media(max-width:320px){
@@ -91,10 +92,10 @@ text-decoration: none;
 const Button= styled.button`
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap');
 font-family: 'Noto Sans TC', sans-serif;
-background: #d0e6a5;
+background: whitesmoke;
 border-radius: 3px;
-border: 2px solid #c5df16;
-color: white;
+border: 2px solid #ed6c5c;
+color: black;
 margin: 0 .5em;
 padding: 0.25em 1em;
 height: 50%;
@@ -109,18 +110,20 @@ const Div= styled.div`
 display:flex;
 align-items: center;
 justify-content: space-between;
-border-bottom: solid rgb(200, 202, 206) 3px;
+border-bottom: solid #ed6c5c 3px;
+background-color: #fa897b;
+max-width: 100%;
 @media(max-width:400px){
-background: whitesmoke;
-width: 100vw;
+
+width: 100%;
 display: flex;
+
 
 
 }
 `
 const Div1= styled.div`
 @media(max-width:400px){
-    background: whitesmoke;
     width: 100vw;
     display: flex;
 `  
@@ -130,6 +133,10 @@ display: flex;
 justify-content: space-between;
 align-items: center;
 
+
+@media(max-width:768px){
+    margin-right: .8em;
+}
 @media(max-width:320px){
     margin-right: .8em;
 }
@@ -153,4 +160,15 @@ color: black;
 text-decoration: none;
 margin-right: 10px;
 font-size: 20px;
+display: flex;
+align-items: center;
+
+@media(max-width:420px){
+    font-size: 15px;
+}
+`
+
+const Span= styled.span`
+margin-right: 5px;
+
 `

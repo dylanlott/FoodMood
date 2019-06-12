@@ -83,9 +83,7 @@ background-color: white;
 z-index: 999;
 height: 50vh;
 width: 50vw;
-border-bottom: solid 3px rgb(222, 225, 229);
-border-left: solid 3px rgb(222, 225, 229);
-
+border-top: solid 3px #ed6c5c;
 
 @media(max-width:1024px){
     height: 23vh;
@@ -103,8 +101,6 @@ height: 40vh;
 width: 100vw;
 background-color: white;
 z-index: 999
-border-bottom: solid 3px rgb(222, 225, 229);
-border-top: solid 3px rgb(222, 225, 229);
 }
 
 @media(max-width:375px){
@@ -131,9 +127,9 @@ align-items: center;
 `
 
 const Button= styled.button`
-background: #d0e6a5;
+background:  #ed6c5c;
 border-radius: 3px;
-border: 2px solid #c5df16;
+border: 2px solid #ed6c5c;
 color: white;
 margin: .5em .5em;
 padding: 0.25em 1em;

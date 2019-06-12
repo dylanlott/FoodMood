@@ -65,9 +65,9 @@ padding-left: 2.2em;
 
 `
 const Button= styled.button`
-background: #d0e6a5;
+background:  #ed6c5c;
 border-radius: 3px;
-border: 2px solid #c5df16;
+border: 2px solid #ed6c5c;
 color: white;
 margin: .5em .5em;
 padding: 0.25em 1em;

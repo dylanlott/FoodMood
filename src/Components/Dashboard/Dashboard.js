@@ -15,6 +15,8 @@ class Dashboard extends Component{
         }
     }
 
+
+//This function gets all the dishes in the users inputted city
 componentDidMount=()=>{
     
     axios.get(`/api/dishes/${this.props.city}`)
@@ -28,6 +30,7 @@ componentDidMount=()=>{
   
 }
 
+//This function sets the favorites on state once a user logs in.
 componentDidUpdate=()=>{
     if(this.props.user_name && !this.props.updated){
         
@@ -112,6 +115,7 @@ const Div= styled.div`
 display: flex;
 flex-wrap: wrap;
 margin-right: .5em;
+margin-bottom: 1em;
 
 
 
