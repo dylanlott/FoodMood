@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import Header from '../Header/Header';
 import axios from 'axios'
 import Dishes from '../Dishes/Dishes'
-import styled from 'styled-components'
+import styled, {keyframes} from 'styled-components'
 import {connect} from 'react-redux'
 import {getFavorites, toggleUpdated, toggleFavorite, changeLoading} from '../../redux/reducers/userReducer'
 
@@ -152,6 +152,17 @@ overflow: auto;
 vertical-align: top;
 }
 `
+const pulse = keyframes`
+    0% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+    }
+    100% {
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+    transform: scale3d(1.05, 1.05, 1.05);
+    }
+    
+`
 const Button =styled.button`
 background: #DEDEDE;
 border-radius: 20px;
@@ -159,6 +170,10 @@ min-width: 7em;
 margin-left: 2em;
 height: 40px;
 opacity: .5;
+:hover {
+    color: red;
+    animation: ${pulse} 1s forwards;
+}
 
 
 @media(max-width:400px){

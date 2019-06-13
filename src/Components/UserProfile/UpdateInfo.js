@@ -72,4 +72,10 @@ color: white;
 margin: .5em .5em;
 padding: 0.25em 1em;
 height: 2em;
+:hover{
+    background: white;
+    color: black;
+    border: 2px solid #ed6c5c;
+    
+}
 `

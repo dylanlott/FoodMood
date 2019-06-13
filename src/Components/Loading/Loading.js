@@ -13,5 +13,8 @@ function Loading (){
 export default Loading
 
 const Div = styled.div`
+margin-top: 10%;
+
+@media(max-width:1024px)
 margin-top: 30%;
 `

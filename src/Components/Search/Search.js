@@ -118,20 +118,19 @@ font-size: 1em;
 `
 const Button= styled.button`
 
-background: white;
+background:  #ed6c5c;
 border-radius: 3px;
 border: 2px solid #ed6c5c;
-color: black;
+color: white;
 margin: 0 0 0 1em;
 padding: 0.25em 1em;
 height: 100%;
-::before {
-    content: '';
-  }
-
-  :hover {
-    color: red;
-  }
+:hover{
+    background: white;
+    color: black;
+    border: 2px solid #ed6c5c;
+    
+}
 
 
 `

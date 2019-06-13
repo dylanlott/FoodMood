@@ -100,8 +100,8 @@ background-color: white;
 z-index: 999;
 height: 50vh;
 width: 50vw;
-border-top: solid 3px #ed6c5c;
-animation: ${floatIn} .6s linear;
+
+animation: ${floatIn} .6s ease-in-out;
 
 @media(max-width:1024px){
     height: 23vh;
@@ -109,6 +109,7 @@ animation: ${floatIn} .6s linear;
 
 @media(max-width:768px){
     height:30vh;
+  
 }
 
 @media(max-width:414px){
@@ -152,6 +153,11 @@ color: white;
 margin: .5em .5em;
 padding: 0.25em 1em;
 height: 50%;
+:hover{
+    background: white;
+    color: black;
+    border: 2px solid #ed6c5c;
+}
 `
 
 const Input= styled.input`

@@ -28,6 +28,7 @@ registerUser=(e)=>{
         this.props.registerToggle()
     })
 }
+
     render(){
         return(
             <Div>
@@ -75,7 +76,6 @@ background-color: white;
 z-index: 999;
 height: 50vh;
 width: 50vw;
-border-top: solid 3px #ed6c5c;
 animation: ${floatIn} .6s linear;
 
 @media(max-width:1024px){
@@ -130,6 +130,11 @@ color: white
 margin: 3em .5em;
 padding: 0.25em 1em;
 height: 2em;
+:hover{
+    background: white;
+    color: black;
+    border: 2px solid #ed6c5c;
+}
 `
 
 const Input= styled.input`

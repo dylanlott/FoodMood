@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import Login from '../Login/Login'
 import RegisterForm from '../Login/RegisterForm';
-import styled from 'styled-components'
+import styled, {keyframes} from 'styled-components'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 import axios from 'axios'
@@ -80,6 +80,7 @@ const mapStateToProps= reduxState =>{
 
 export default connect(mapStateToProps, {logoutUser})(Header)
 
+
 const Logo=styled(Link)`
 color: whitesmoke;
 text-decoration: none;
@@ -114,6 +115,7 @@ height: 50%;
 @media(max-width:320px){
     width: 44%;
     margin-right: 0;
+   
 }
 
 `

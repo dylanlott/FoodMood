@@ -1,7 +1,7 @@
 import React from 'react'
 
 import {Link} from 'react-router-dom'
-import styled from 'styled-components'
+import styled, {keyframes} from 'styled-components'
 import {connect} from 'react-redux'
 import axios from 'axios'
 
@@ -23,6 +23,18 @@ const Dishes = (props)=>{
 
 
 export default Dishes
+const pulse = keyframes`
+    0% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+    }
+    100% {
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+    transform: scale3d(1.05, 1.05, 1.05);
+    }
+  
+    
+`
 
 const DishName= styled(Link)`
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap');
@@ -37,6 +49,9 @@ margin-left: 3em;
 height: 38vh;
 width: 20vw;
 border-radius: 6px;
+:hover{
+    animation: ${pulse} .8s forwards;
+}
 
 
 @media(max-width:1024px){

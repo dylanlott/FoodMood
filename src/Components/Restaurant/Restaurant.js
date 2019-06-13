@@ -96,7 +96,7 @@ render(){
 
                 <Heart>
                 {!this.props.favorited ?
-                <Icon.Heart size={40} onClick={this.addToFavorites} /> 
+               <> <Icon.Heart size={40} onClick={this.addToFavorites} /> </>
                
                
                 : <Icon.Heart size={40} style={{color:'red'}} onClick={this.unFavorite}/>}
@@ -193,3 +193,4 @@ margin-bottom: 13px;
 
 
 `
+
