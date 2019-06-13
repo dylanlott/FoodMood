@@ -4,7 +4,8 @@ const initialState={
     favorited: false,
     favorites:[],
     updated: false,
-    city: ''
+    city: '',
+    loading: false
     
 }
 
@@ -15,6 +16,7 @@ const TOGGLE_FAVORITE= 'TOGGLE_FAVORITE'
 const GET_FAVORITES= 'GET_FAVORITES'
 const TOGGLE_UPDATED= 'TOGGLE_UPDATED'
 const GET_CITY= 'GET_CITY'
+const LOADING= 'LOADING'
 
 
 //build out reducer
@@ -60,6 +62,12 @@ export function getCity(city){
     }
 }
 
+export function changeLoading(){
+    return{
+        type: LOADING
+    }
+}
+
 
 
 export default function reducer(state= initialState, action){
@@ -78,6 +86,9 @@ export default function reducer(state= initialState, action){
              return{...state, updated: true}
         case GET_CITY:
             return{...state, city: action.payload}
+        case LOADING:
+            const isLoading= !state.loading
+            return{...state, loading: isLoading}
         default:
             return state
 

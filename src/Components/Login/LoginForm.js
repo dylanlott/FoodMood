@@ -3,7 +3,7 @@ import axios from 'axios';
 import RegisterForm from './RegisterForm'
 import {connect} from 'react-redux'
 import {updateUser} from '../../redux/reducers/userReducer'
-import styled from 'styled-components'
+import styled, {keyframes} from 'styled-components'
 
 class LoginForm extends Component{
     constructor() {
@@ -71,7 +71,24 @@ class LoginForm extends Component{
 }
 
 export default connect(null, {updateUser})(LoginForm)
-
+const floatIn= keyframes`
+0% {
+    opacity: 0;
+    height: 0;
+    -webkit-transform: translate3d(0, -0px, 0);
+    transform: translate3d(0, -0px, 0);
+    }
+50%{
+    height: 50;
+    opacity: 1;
+}
+100% {
+    opacity: 1;
+    height: 100;
+    -webkit-transform: none;
+    transform: none;
+    }
+`
 const Div= styled.div`
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap');
 
@@ -84,6 +101,7 @@ z-index: 999;
 height: 50vh;
 width: 50vw;
 border-top: solid 3px #ed6c5c;
+animation: ${floatIn} .6s linear;
 
 @media(max-width:1024px){
     height: 23vh;

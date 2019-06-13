@@ -4,7 +4,7 @@ import axios from 'axios'
 import Dishes from '../Dishes/Dishes'
 import styled from 'styled-components'
 import {connect} from 'react-redux'
-import {getFavorites, toggleUpdated, toggleFavorite} from '../../redux/reducers/userReducer'
+import {getFavorites, toggleUpdated, toggleFavorite, changeLoading} from '../../redux/reducers/userReducer'
 
 
 class Dashboard extends Component{
@@ -18,22 +18,26 @@ class Dashboard extends Component{
 
 //This function gets all the dishes in the users inputted city
 componentDidMount=()=>{
-    
+    this.props.changeLoading()
     axios.get(`/api/dishes/${this.props.city}`)
     .then((res)=>{
         
         this.setState({
             dishes: res.data
         })
+        this.props.changeLoading()
     })
-    
+    .catch(err=>{
+        console.log(err)
+        this.props.changeLoading()
+    })
   
 }
 
 //This function sets the favorites on state once a user logs in.
 componentDidUpdate=()=>{
     if(this.props.user_name && !this.props.updated){
-        
+       
         let {id}= this.props
         id= parseInt(id)
         axios.get(`/api/favorite/${id}`)
@@ -41,6 +45,10 @@ componentDidUpdate=()=>{
             this.props.getFavorites(res.data) && this.props.toggleUpdated()
            
         
+        })
+        .catch(err =>{
+            console.log(err)
+          
         })
     }
 
@@ -88,8 +96,8 @@ getCategory = (category) => {
                 <Button onClick={()=> this.getCategory('Burger')}>Burgers</Button>
                 <Button onClick={()=> this.getCategory('Brunch')}>Brunch</Button>
                 <Button onClick={()=> this.getCategory('Mexican')}>Mexican</Button>
-                <Button>Pizza</Button>
-                <Button>Sushi</Button>
+                <Button onClick={()=> this.getCategory('Pizza')}>Pizza</Button>
+                <Button onClick={()=> this.getCategory('Sushi')}>Sushi</Button>
                 <Button>Happy Hour</Button>
                 <Button>Healthy</Button>
                 <Button>Pasta</Button>
@@ -108,7 +116,7 @@ const mapStateToProps=(reduxState)=>{
     return reduxState
 }
 
-export default connect(mapStateToProps, {getFavorites, toggleUpdated, toggleFavorite})(Dashboard)
+export default connect(mapStateToProps, {getFavorites, toggleUpdated, toggleFavorite, changeLoading})(Dashboard)
 
 
 const Div= styled.div`

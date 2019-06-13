@@ -33,8 +33,8 @@ handleChange=(event)=> {
                 <Div>
                 <h2>Find food, for any mood!</h2>
                 <Form>
-                    {/* <Input type='text' name='city' placeholder='Enter city name' onChange={this.handleInput}></Input> */}
-                    {/* <Link to='/dashboard'><Button onClick={()=>this.props.getCity(this.state.city)}>Search</Button></Link> */}
+                    {/* <Input type='text' name='city' placeholder='Enter city name' onChange={this.handleInput}></Input> */} 
+                    {/* {/* <Link to='/dashboard'><Button onClick={()=>this.props.getCity(this.state.city)}>Search</Button></Link> */}
                     <Label>
                         
                         <Select value={this.state.value} onChange={this.handleChange}>
@@ -125,6 +125,13 @@ color: black;
 margin: 0 0 0 1em;
 padding: 0.25em 1em;
 height: 100%;
+::before {
+    content: '';
+  }
+
+  :hover {
+    color: red;
+  }
 
 
 `

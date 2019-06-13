@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import axios from 'axios'
 import styled from 'styled-components'
 import {connect} from 'react-redux'
-import {toggleFavorite} from '../../redux/reducers/userReducer'
+import {toggleFavorite,changeLoading} from '../../redux/reducers/userReducer'
 import * as Icon from 'react-feather'
 import './Restaurant.css'
 
@@ -20,6 +20,7 @@ constructor(){
 //Returns associated dish and restaurant information for dish selected
 componentDidMount=async()=>{
     const {id}= this.props.match.params
+    this.props.changeLoading()
     await axios.get(`/api/restaurant/${id}`)
     .then(res =>{
     
@@ -28,9 +29,11 @@ componentDidMount=async()=>{
             dish: res.data
             
         })
+        this.props.changeLoading()
     })
     .catch(err =>{
         console.log(err)
+        this.props.changeLoading()
     })
     
 
@@ -106,7 +109,7 @@ render(){
 const mapStateToProps=(reduxState)=>{
     return reduxState
 }
-export default connect(mapStateToProps, {toggleFavorite})(Restaurant)
+export default connect(mapStateToProps, {toggleFavorite, changeLoading})(Restaurant)
 
 
 const Div =styled.div`

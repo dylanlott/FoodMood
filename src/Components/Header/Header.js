@@ -58,10 +58,10 @@ handleLogout=(e)=>{
             <Logo to='/'><H1>FoodMood</H1></Logo>
 
             {!this.props.user_name 
-            ? (<Div1><Button onClick={this.handleLoginToggle}>login</Button>
-            <Button onClick={this.handleRegisterToggle}>register</Button></Div1>) 
-            :(<Div2><H3 to={`/user/${this.props.id}`}><Span><Icon.User /></Span>{this.props.user_name}</H3>
-                <Button onClick={this.handleLogout}>Logout</Button></Div2>)}
+            ? (<Div1><Button onClick={this.handleLoginToggle}>Login</Button>
+            <Button onClick={this.handleRegisterToggle}>Register</Button></Div1>) 
+            :(<Div2><H3 to={`/user/${this.props.id}`}><Span><Icon.User style={{color:'white'}} /></Span>{this.props.user_name}</H3>
+                <Button onClick={this.handleLogout}><Logout to='/'>Logout </Logout></Button></Div2>)}
             
 
 
@@ -89,6 +89,10 @@ text-decoration: none;
     margin-right: 0;
 }
 `
+const Logout=styled(Link)`
+text-decoration: none;
+color: black;
+`
 const Button= styled.button`
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap');
 font-family: 'Noto Sans TC', sans-serif;
@@ -99,6 +103,13 @@ color: black;
 margin: 0 .5em;
 padding: 0.25em 1em;
 height: 50%;
+::before {
+    content: '';
+  }
+
+  :hover {
+    color: red;
+  }
 
 @media(max-width:320px){
     width: 44%;
@@ -156,7 +167,7 @@ margin-right: 30px;
 `
 
 const H3= styled(Link)`
-color: black;
+color: white;
 text-decoration: none;
 margin-right: 10px;
 font-size: 20px;

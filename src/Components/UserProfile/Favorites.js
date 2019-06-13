@@ -2,6 +2,8 @@ import React, {Component} from 'react'
 import axios from 'axios'
 import {Link} from 'react-router-dom'
 import styled from 'styled-components'
+import {connect} from 'react-redux'
+import {changeLoading} from '../../redux/reducers/userReducer'
 
 class Favorites extends Component{
 
@@ -16,12 +18,18 @@ class Favorites extends Component{
         
         let {id}= this.props
         id= parseInt(id)
+        this.props.changeLoading()
         axios.get(`/api/favorite/${id}`)
         .then((res)=>{
-            console.log(res.data)
+           
             this.setState({
                 favorites: res.data
             })
+            this.props.changeLoading()
+        })
+        .catch((err)=>{
+            console.log(err)
+            this.props.changeLoading()
         })
         
     }
@@ -30,8 +38,8 @@ class Favorites extends Component{
     render(){
         const favorites= this.state.favorites.map((favorite, i)=>{
             return(
-            <DishName to={`/restaurant/${favorite.dish_id}`}>
-                <div key={i}> 
+            <DishName key={i}to={`/restaurant/${favorite.dish_id}`}>
+                <div > 
             <Img alt='img' src={favorite.img_url}/>
             {/* <H4>{props.dishName}</H4> */}
             <Div>
@@ -54,7 +62,7 @@ class Favorites extends Component{
     }
 }
 
-export default Favorites 
+export default connect(null,{changeLoading})(Favorites) 
 
 const Div1= styled.div`
 display: flex;
