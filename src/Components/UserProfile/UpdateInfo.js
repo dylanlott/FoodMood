@@ -21,7 +21,7 @@ class UpdateInfo extends Component{
     }
 
 
-    hanldeInput=(e)=>{
+    handleInput=(e)=>{
         this.setState({
             [e.target.name]: e.target.value
         })
@@ -31,7 +31,7 @@ class UpdateInfo extends Component{
         return(
            
                 <Form onSubmit={this.onSubmit}>
-                    <Input type='text' placeholder='input new username' name='user_name' onChange={this.hanldeInput}></Input>
+                    <Input type='text' placeholder='input new username' name='user_name' onChange={this.handleInput}></Input>
                     <Button>Update Username</Button>
                 </Form>
            

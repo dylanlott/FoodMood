@@ -129,7 +129,7 @@ height: 100%;
     background: white;
     color: black;
     border: 2px solid #ed6c5c;
-    
+
 }
 
 
@@ -170,7 +170,9 @@ min-width: 50%;
 border: 2px solid #ed6c5c;
 height: 100%;
 
+
 `
+
 
 const Div2= styled.div`
 background: url('https://images.unsplash.com/photo-1521136686176-732808c0fcc1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=600')no-repeat center center fixed;

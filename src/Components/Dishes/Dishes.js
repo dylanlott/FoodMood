@@ -2,6 +2,7 @@ import React from 'react'
 
 import {Link} from 'react-router-dom'
 import styled, {keyframes} from 'styled-components'
+import {device} from '../Style/Style'
 import {connect} from 'react-redux'
 import axios from 'axios'
 
@@ -54,14 +55,14 @@ border-radius: 6px;
 }
 
 
-@media(max-width:1024px){
+@media ${device.laptop}{
     height: 20vh;
     width: 30vw;
     margin-left: 8em;
     margin-top: 3em;
 }
 
-@media(max-width:770px){
+@media ${device.tablet}{
 height: 25vh;
 width: 35vw;
 border-radius: 6px;
@@ -70,13 +71,16 @@ margin-left: 5em;
 }
 
 
-@media(max-width:420px){
+@media ${device.mobileL} {
 height: 30%;
 width: 85%;
 border-radius: 6px;
 margin-top: 1em;
 margin-left:0;
 
+}
+@media ${device.mobileS}{
+    height: 50vh;
 }
 
 `
@@ -89,8 +93,8 @@ height: 5em;
 
 
 
-@media(max-width:400px){
-    height:3em;
+@media ${device.mobileL} {
+    height: 3em;
 }
 `
 const Img =styled.img`
@@ -98,7 +102,7 @@ width: 101%;
 height: 10em;
 border-radius: 6px;
 
-@media(max-width:420px){
+@media ${device.mobileL} {
 width: 101%;
 height: 12em;
 border-radius: 6px;
@@ -115,15 +119,18 @@ display: flex;
 justify-content: center;
 align-items: center;
 
-@media(max-width:400px){
+@media ${device.mobileL} {
 margin: 0 0;
 padding: .5em;
 display: flex;
 justify-content: center;
 align-items: center;
 }
+
+@media ${device.mobileS} {
+    margin-top: 1.6em;
+    
+}
 `
-const Button= styled.button`
-margin-bottom: 1em;
-`
+
 
