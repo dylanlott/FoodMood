@@ -47,7 +47,7 @@ border-bottom: solid rgb(200, 202, 206) 3px;
 border-right: solid rgb(210, 210, 215) 3px;
 margin-top: 1.5em;
 margin-left: 3em;
-height: 38vh;
+height: 40vh;
 width: 20vw;
 border-radius: 6px;
 :hover{
@@ -118,6 +118,7 @@ padding: 0em;
 display: flex;
 justify-content: center;
 align-items: center;
+margin-bottom: 1em;
 
 @media ${device.mobileL} {
 margin: 0 0;
@@ -129,7 +130,7 @@ align-items: center;
 
 @media ${device.mobileS} {
     margin-top: 1.6em;
-    
+
 }
 `
 

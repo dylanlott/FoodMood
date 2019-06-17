@@ -169,6 +169,7 @@ border-radius: 6px;
 min-width: 50%;
 border: 2px solid #ed6c5c;
 height: 100%;
+outline: none;
 
 
 `
