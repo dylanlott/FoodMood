@@ -34,19 +34,17 @@ class Favorites extends Component{
         
     }
 
-
     render(){
         const favorites= this.state.favorites.map((favorite, i)=>{
             return(
             <DishName key={i}to={`/restaurant/${favorite.dish_id}`}>
-                <div > 
+        <div> 
             <Img alt='img' src={favorite.img_url}/>
             {/* <H4>{props.dishName}</H4> */}
             <Div>
             <P>{favorite.dish_description}</P>
             </Div>
-            
-            
+
         </div>
         </DishName>
             )
@@ -68,10 +66,7 @@ const Div1= styled.div`
 display: flex;
 flex-wrap: wrap;
 margin-right: .5em;
-
 `
-
-
 const DishName= styled(Link)`
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap');
 color: black;
@@ -101,16 +96,13 @@ margin-top: 1em;
 margin-left: 5em;
 }
 
-
 @media(max-width:420px){
 height: 30%;
 width: 85%;
 border-radius: 6px;
 margin-top: 1em;
 margin-left:2em;
-
 }
-
 `
 
 const Div= styled.div`
@@ -119,13 +111,10 @@ align-content: center;
 justify-content: center;
 height: 5em;
 
-
-
 @media(max-width:400px){
     height:3em;
 }
 `
-
 
 const Img =styled.img`
 width: 101%;
@@ -136,7 +125,6 @@ border-radius: 6px;
 width: 101%;
 height: 12em;
 border-radius: 6px;
-
 `
 
 const P= styled.p`

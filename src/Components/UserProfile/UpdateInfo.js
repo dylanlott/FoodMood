@@ -2,7 +2,6 @@ import React, {Component} from 'react'
 import axios from 'axios'
 import styled from 'styled-components'
 
-
 class UpdateInfo extends Component{
     constructor(){
         super()
@@ -19,7 +18,6 @@ class UpdateInfo extends Component{
             console.log('success')
         })
     }
-
 
     handleInput=(e)=>{
         this.setState({

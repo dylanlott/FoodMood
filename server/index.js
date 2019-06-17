@@ -6,7 +6,6 @@ const massive= require('massive')
 const auth_ctrl= require('./controllers/authcontroller')
 const dish_ctrl= require('./controllers/dishcontroller')
 
-
 const app= express()
 
 // function logger (req, res, next){
@@ -30,8 +29,6 @@ app.use(session({
     }
 }))
 
-
-
 //Massive Setup
 
 massive(CONNECTION_STRING).then((database)=>{
@@ -45,13 +42,9 @@ app.post('/auth/register', auth_ctrl.register)
 app.post('/auth/login', auth_ctrl.login)
 app.get('/auth/logout', auth_ctrl.logout)
 
-
 //Endpoints for dishes
 app.get('/api/dishes/:city', dish_ctrl.getAllDishes)
 app.get('/api/restaurant/:id', dish_ctrl.getRestaurant)
-
-
-
 
 //Endpoints for user profile
 

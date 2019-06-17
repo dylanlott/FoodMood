@@ -104,20 +104,14 @@ color: black;
 margin: 0 .5em;
 padding: 0.25em 1em;
 height: 50%;
-::before {
-    content: '';
-  }
-
-  :hover {
+:hover {
     color: red;
   }
 
 @media(max-width:320px){
     width: 44%;
     margin-right: 0;
-   
 }
-
 `
 const Div= styled.div`
 display:flex;
@@ -126,13 +120,10 @@ justify-content: space-between;
 border-bottom: solid #ed6c5c 3px;
 background-color: #fa897b;
 max-width: 100%;
-@media(max-width:400px){
 
+@media(max-width:400px){
 width: 100%;
 display: flex;
-
-
-
 }
 `
 const Div1= styled.div`
@@ -145,7 +136,6 @@ const Div2= styled.div`
 display: flex;
 justify-content: space-between;
 align-items: center;
-
 
 @media(max-width:768px){
     margin-right: .8em;
@@ -163,8 +153,7 @@ margin-left: 15px;
 margin-right: 30px;
 
 @media(max-width:360px){
-    margin-right:15px;
-  
+    margin-right:15px; 
 }
 `
 
@@ -183,5 +172,4 @@ align-items: center;
 
 const Span= styled.span`
 margin-right: 5px;
-
 `

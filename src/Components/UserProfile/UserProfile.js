@@ -6,8 +6,6 @@ import styled from 'styled-components'
 import Header from '../Header/Header'
 import {Link} from 'react-router-dom'
 
-
-
 class UserProfile extends Component{
 constructor(){
     super()
@@ -21,7 +19,6 @@ handleUpdateInfoToggle=(e)=>{
         updateInfoSeen: !this.state.updateInfoSeen
     })
 }
-
 
     render(){
         return(
@@ -62,7 +59,6 @@ height: 2em;
 font-size: 14px;
 display: flex;
 align-items: center;
-
 
 @media(max-width:420px){
     min-height: 3.3em;

@@ -9,15 +9,12 @@ import Header from '../Header/Header';
 import {Link} from 'react-router-dom'
 
 class Restaurant extends Component{
-
 constructor(){
     super()
     this.state={
-        dish:{},
-        
+        dish:{},   
     }
 }
-
 
 //Returns associated dish and restaurant information for dish selected
 componentDidMount=async()=>{
@@ -26,7 +23,6 @@ componentDidMount=async()=>{
     await axios.get(`/api/restaurant/${id}`)
     .then(res =>{
     
-        
         this.setState({
             dish: res.data
             
@@ -38,8 +34,6 @@ componentDidMount=async()=>{
         this.props.changeLoading()
     })
     
-
-
     const foundFavorite= this.props.favorites.findIndex(element => element.dish_id === this.state.dish.dish_id)
     
     if(foundFavorite !== -1){
@@ -47,22 +41,18 @@ componentDidMount=async()=>{
     }
     else{
         this.props.toggleFavorite({favorited: false})
-    }
-
-    
+    }    
 }
 
 //adds dish to users favorites table
 addToFavorites=(e)=>{
-  
-    
    axios.post('/api/favorite', {user_id: this.props.id, dish: this.state.dish.dish_id} )
    .then((res)=>{
        this.props.favorites.push(this.state.dish)
        this.props.toggleFavorite({favorited:true})
    })
-   .catch(()=>{
-       window.alert('Please login to favorite items')
+   .catch((err)=>{
+       console.log(err)
    })
 }
 
@@ -75,11 +65,8 @@ unFavorite=(e)=>{
         this.props.favorites.splice(deletedFavorite, 1)
         this.props.toggleFavorite({favorited:false})
         }
-    })
-
-  
+    })  
 }
-
 
 render(){
         
@@ -129,7 +116,7 @@ display: flex;
 flex-direction: column;
 justify-content: center; 
 align-items: center;
-height: 80vh;
+height: 100vh;
 width: 100vw;
 margin-top: 0;
 
@@ -145,14 +132,14 @@ font-family: 'Noto Sans TC', sans-serif;
 
 background-color: whitesmoke;
 border-bottom: solid rgb(200, 202, 206) 3px;
-border-right: solid rgb(210, 210, 215) 3px;
+border-right: solid rgb(220, 220, 215) 3px;
 width: 25%;
-height: 70vh;
-margin-top: 1em;
+min-height: 80vh;
+margin-top: 3em;
 
 @media(max-width:1024px){
 font-size: 32px;
-height: 70vh;
+height: 80vh;
 width: 60%;
 
 border-radius: 6px;

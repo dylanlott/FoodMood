@@ -125,17 +125,11 @@ flex-wrap: wrap;
 margin-right: .5em;
 margin-bottom: 1em;
 
-
-
-
-
 @media(max-width:420px){
 display: flex;
 flex-direction: column;
 align-items: center;
 }
-
-
 `
 const Div1= styled.div`
 width: 100%;
@@ -144,7 +138,6 @@ overflow: auto;
 margin-top: 1em;
 
 @media(max-width: 400px){
-
 width: 100%;
 height: 36px;
 display: flex;
@@ -165,21 +158,17 @@ opacity: .5;
     color: red;
 }
 
-
 @media(max-width:400px){
 min-width: 7em;
 height: 35px;
 left: 201px;
 top: 32px;
-
 background: #DEDEDE;
 border-radius: 16px;
 opacity: .5;
 margin-left: 1.3em;
 display: flex;
 justify-content: center;
-
-::webkit-scrollbar{display:none}
 }
 `
 

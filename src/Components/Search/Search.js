@@ -22,8 +22,6 @@ handleChange=(event)=> {
     this.setState({value: event.target.value});
   }
 
-
-
     render(){
        
         return(
@@ -103,9 +101,6 @@ justify-content: space-around;
 width: 100%;
 height: 3em;
 
-
-@media()
-
 `
 
 const Input =styled.input`
@@ -170,16 +165,12 @@ min-width: 50%;
 border: 2px solid #ed6c5c;
 height: 100%;
 outline: none;
-
-
 `
 
 
 const Div2= styled.div`
 background: url('https://images.unsplash.com/photo-1521136686176-732808c0fcc1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=600')no-repeat center center fixed;
-
 background-size: cover;
-
 height: 100vh;
 width: 100vw;
 display: flex;

@@ -24,8 +24,7 @@ class LoginForm extends Component{
     handleLoginInfoUpdate=(e)=>{
         this.setState({
             [e.target.name]: e.target.value
-        })
-        
+        })   
     }
 
     //method that runs login method on authcontroller to login user, closes login module, and resets state which causes the site to conditionally render a new logged in view.
@@ -34,8 +33,6 @@ class LoginForm extends Component{
         const {user_name, user_password}= this.state
         axios.post('/auth/login', {user_name, user_password})
         .then((res)=>{
-            
-            
             this.props.updateUser(res.data)
             this.props.handleToggle()
         })
@@ -45,12 +42,8 @@ class LoginForm extends Component{
         this.setState({
             user_name:'',
             user_password:''
-        })
-       
-        
+        })  
     }
-
-
 
     render(){
         return(
@@ -71,6 +64,7 @@ class LoginForm extends Component{
 }
 
 export default connect(null, {updateUser})(LoginForm)
+
 const floatIn= keyframes`
 0% {
     opacity: 0;
@@ -91,7 +85,6 @@ const floatIn= keyframes`
 `
 const Div= styled.div`
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap');
-
 font-family: 'Noto Sans TC', sans-serif;
 position: fixed;
 top: 3;
@@ -100,7 +93,6 @@ background-color: white;
 z-index: 999;
 height: 50vh;
 width: 50vw;
-
 animation: ${floatIn} .6s ease-in-out;
 
 @media(max-width:1024px){
@@ -109,7 +101,6 @@ animation: ${floatIn} .6s ease-in-out;
 
 @media(max-width:768px){
     height:30vh;
-  
 }
 
 @media(max-width:414px){
@@ -128,23 +119,19 @@ z-index: 999
 @media(max-width:320px){
     height: 51vh;
 }
-
 `
-
 const Form= styled.form`
 display: flex;
 flex-direction: column;
 align-items: center;
 
 @media(max-width:400px){
-
 display: flex;
 flex-direction: column;
 width: 100vw;
 align-items: center;
 }
 `
-
 const Button= styled.button`
 background:  #ed6c5c;
 border-radius: 3px;
@@ -159,7 +146,6 @@ height: 50%;
     border: 2px solid #ed6c5c;
 }
 `
-
 const Input= styled.input`
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap');
 font-family: 'Noto Sans TC', sans-serif;
@@ -170,5 +156,4 @@ border: none;
 border-bottom: 1px solid lightgray;
 font-size: 20px;
 padding-left: 25%;
-
 `
