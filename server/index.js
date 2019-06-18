@@ -17,7 +17,7 @@ const app= express()
 const {SESSION_SECRET, SERVER_PORT, CONNECTION_STRING}= process.env
 
 app.use(express.json())
-app.use(morgan())
+app.use(morgan('combined'))
 // app.use(logger)
 
 //Session set up
