@@ -2,6 +2,7 @@
 require('dotenv').config()
 const express= require('express')
 const session= require('express-session')
+const morgan = require('morgan')
 const massive= require('massive')
 const auth_ctrl= require('./controllers/authcontroller')
 const dish_ctrl= require('./controllers/dishcontroller')
@@ -16,6 +17,7 @@ const app= express()
 const {SESSION_SECRET, SERVER_PORT, CONNECTION_STRING}= process.env
 
 app.use(express.json())
+app.use(morgan())
 // app.use(logger)
 
 //Session set up
