@@ -42,7 +42,7 @@ border-bottom: solid rgb(200, 202, 206) 3px;
 border-right: solid rgb(210, 210, 215) 3px;
 margin-top: 1.5em;
 margin-left: 3em;
-min-height: 40vh;
+height: 40vh;
 width: 20vw;
 border-radius: 6px;
 :hover{
@@ -94,7 +94,7 @@ height: 5em;
 `
 const Img =styled.img`
 width: 101%;
-height: 10em;
+height: 12em;
 border-radius: 6px;
 
 @media ${device.mobileL} {
