@@ -51,7 +51,7 @@ border-radius: 6px;
 
 
 @media ${device.laptop}{
-    min-height: 20vh;
+    height: 20vh;
     width: 30vw;
     margin-left: 8em;
     margin-top: 3em;
@@ -75,7 +75,7 @@ margin-left:0;
 
 }
 @media ${device.mobileS}{
-    height: 50vh;
+    height: 45vh;
 }
 
 `

@@ -32,7 +32,7 @@ registerUser=(e)=>{
     render(){
         return(
             <Div>
-            <h1>Register</h1>
+            <H1>Register</H1>
             <Form>
                 <Input type='text' name='user_name' placeholder='username' onChange={this.handleInput}/>
                 <Input type='text' name='user_email' placeholder='email' onChange={this.handleInput}/>
@@ -99,7 +99,7 @@ border-top: solid 3px #ed6c5c;
 }
 
 @media(max-width:375px){
-    height:45vh;
+    height:35vh;
 }
 
 @media(max-width:320px){
@@ -148,4 +148,10 @@ border-bottom: 1px solid lightgray;
 font-size: 20px;
 padding-left: 25%;
 
+`
+const H1= styled.h1`
+font-size: 1.5em;
+font-weight: 500;
+margin-top: 1em;
+margin-bottom: 1em;
 `

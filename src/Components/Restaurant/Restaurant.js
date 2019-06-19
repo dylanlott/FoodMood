@@ -182,7 +182,7 @@ border-radius: 6px;
 `
 
 const P= styled.p`
-margin-top: 0;
+margin-top: 1em;
 margin-bottom: 0;
 
 `
@@ -223,8 +223,8 @@ color: white;
 }
 `
 const H4= styled.h4`
-margin: 0;
+margin-top: 1em;
 `
 const H3= styled.h3`
-margin: 0;
+margin-top: 1em;
 `

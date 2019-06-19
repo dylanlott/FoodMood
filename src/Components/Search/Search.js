@@ -29,7 +29,7 @@ handleChange=(event)=> {
             <Header />
             <Div2>
                 <Div>
-                <h2>Find food, for any mood!</h2>
+                <H2>Find food, for any mood!</H2>
                 <Form>
                     {/* <Input type='text' name='city' placeholder='Enter city name' onChange={this.handleInput}></Input> */} 
                     {/* {/* <Link to='/dashboard'><Button onClick={()=>this.props.getCity(this.state.city)}>Search</Button></Link> */}
@@ -172,7 +172,7 @@ const Div2= styled.div`
 background: url('https://images.unsplash.com/photo-1521136686176-732808c0fcc1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=600')no-repeat center center fixed;
 background-size: cover;
 height: 100vh;
-width: 100vw;
+width: 100%;
 display: flex;
 justify-content: center;
 
@@ -181,4 +181,9 @@ justify-content: center;
 const Label=styled.label`
 display: flex;
 justify-content: space-around;
+`
+const H2= styled.h2`
+margin-bottom: 1em;
+font-size: 1.5em;
+font-weight: 500;
 `
