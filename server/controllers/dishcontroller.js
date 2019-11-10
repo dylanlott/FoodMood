@@ -65,6 +65,20 @@ module.exports={
         })
     },
 
+    searchRestaurantsByName: (req, res) => {
+        const db = req.app.get('db')
+
+        db.restaurants.search_by_name({ rest_name })
+        .then((dbRes) => {
+            console.log('search by name response: ', dbRes)
+            return res.status(200).send(dbRes[0])
+        })
+        .catch((err) => {
+            console.log('error searching restaurants by name: ', err)
+            return res.status(500).send('Server Error')
+        })
+    },
+
     addFavorite:(req, res)=>{
         const db= req.app.get('db')
         const {user_id, dish}= req.body
