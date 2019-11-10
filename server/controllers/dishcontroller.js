@@ -45,7 +45,7 @@ module.exports={
 
         dbInstance.dishes.get_category({category, city})
         .then((dishes) =>{
-            res.status(200).send(dishes)
+            return res.status(200).send(dishes)
         })
         .catch(error =>{
             if(error) throw error
@@ -67,8 +67,13 @@ module.exports={
 
     searchRestaurantsByName: (req, res) => {
         const db = req.app.get('db')
+        const {
+          name
+        } = req.query
 
-        db.restaurants.search_by_name({ rest_name })
+        console.log('searching restaurants by name: ', name)
+
+        db.restaurants.search_by_name({ name })
         .then((dbRes) => {
             console.log('search by name response: ', dbRes)
             return res.status(200).send(dbRes[0])
