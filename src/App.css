@@ -44,15 +44,15 @@ table {
 }
 
 html{
-  background-color: whitesmoke;
+  background-color: #fff;
   height: 100%;
   width: 100%;
 }
-@import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Overpass&display=swap');
 
 .App {
-  background-color:whitesmoke;
-  font-family: 'Noto Sans TC', sans-serif;
+  background-color: #F2F2F2;
+  font-family: 'Overpass', sans-serif;
   height: 100%;
   max-width: 100%;
 

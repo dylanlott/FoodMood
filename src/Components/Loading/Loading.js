@@ -1,11 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
-
+const loading = require('../../../src/comida.gif')
 
 function Loading (){
     return(
         <Div>
-            <img src={require('../../../src/comida.gif')}></img>
+            <img src={loading}></img>
         </Div>
     )
 }
