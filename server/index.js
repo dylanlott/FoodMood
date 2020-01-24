@@ -39,7 +39,6 @@ massive(CONNECTION_STRING).then((database)=>{
 })
 
 //Endpoints for authentication/login
-
 app.post('/auth/register', auth_ctrl.register)
 app.post('/auth/login', auth_ctrl.login)
 app.get('/auth/logout', auth_ctrl.logout)
@@ -47,9 +46,12 @@ app.get('/auth/logout', auth_ctrl.logout)
 //Endpoints for dishes
 app.get('/api/dishes/:city', dish_ctrl.getAllDishes)
 app.get('/api/restaurant/:id', dish_ctrl.getRestaurant)
+app.post('/api/dishes/:city', dish_ctrl.addDish)
+
+// restaurants
+app.get('/api/restaurant', dish_ctrl.searchRestaurantsByName)
 
 //Endpoints for user profile
-
 app.put('/api/user', auth_ctrl.editUser)
 
 //Endpoint for favorites

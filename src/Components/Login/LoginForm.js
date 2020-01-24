@@ -48,7 +48,7 @@ class LoginForm extends Component{
     render(){
         return(
             <Div>
-                <h1>Log in to FoodMood</h1>
+                <H1>Log in to FoodMood</H1>
                 <Form onSubmit={this.handleUserLogin}>
                     <Input type='text' name='user_name' placeholder='user name' onChange={this.handleLoginInfoUpdate}/>
                     <Input type='password' name='user_password' placeholder='password' onChange={this.handleLoginInfoUpdate}/>
@@ -114,7 +114,7 @@ z-index: 999
 }
 
 @media(max-width:375px){
-    height:45vh;
+    height:35vh;
 }
 @media(max-width:320px){
     height: 51vh;
@@ -156,4 +156,11 @@ border: none;
 border-bottom: 1px solid lightgray;
 font-size: 20px;
 padding-left: 25%;
+`
+
+const H1= styled.h1`
+font-size: 1.5em;
+font-weight: 500;
+margin-top: 1em;
+margin-bottom: 1em;
 `
