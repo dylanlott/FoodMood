@@ -47,8 +47,6 @@ export default connect(mapStateToProps)(UserProfile)
 
 
 const Button= styled.button`
-@import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap');
-font-family: 'Noto Sans TC', sans-serif;
 background:  #ed6c5c;
 border-radius: 3px;
 border: 2px solid #ed6c5c;
@@ -66,9 +64,7 @@ align-items: center;
 }
 `
 const H3= styled.h3`
-@import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap');
 color: black;
-font-family: 'Noto Sans TC', sans-serif;
 `
 
 const Div= styled.div`
@@ -86,8 +82,6 @@ align-items: center;
 `
 
 const Button1= styled(Link)`
-@import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap');
-font-family: 'Noto Sans TC', sans-serif;
 background:  #ed6c5c;
 border-radius: 3px;
 border: 2px solid #ed6c5c;

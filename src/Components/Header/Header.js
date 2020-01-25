@@ -55,7 +55,7 @@ handleLogout=(e)=>{
         return(
             <>
             <Div>
-            <Logo to='/'><H1>FoodMood</H1></Logo>
+                <Logo to='/'><H1>tastebud</H1></Logo>
 
             {!this.props.user_name 
             ? (<Div1><Button onClick={this.handleLoginToggle}>Login</Button>
@@ -82,11 +82,10 @@ export default connect(mapStateToProps, {logoutUser})(Header)
 
 
 const Logo=styled(Link)`
-color: whitesmoke;
+color: #FA897B;
 text-decoration: none;
 
 @media(max-width:320px){
-    font-size: .7em;
     margin-right: 0;
 }
 `
@@ -95,18 +94,18 @@ text-decoration: none;
 color: black;
 `
 const Button= styled.button`
-@import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap');
-font-family: 'Noto Sans TC', sans-serif;
-background: whitesmoke;
+font-size: 16px;
+font-weight: 800;
+background: #fff;
 border-radius: 3px;
 border: 2px solid #ed6c5c;
-color: black;
+color: #FA897B;
 margin: 0 .5em;
 padding: 0.25em 1em;
 height: 50%;
 :hover {
     color: red;
-  }
+}
 
 @media(max-width:320px){
     max-width: 45%;
@@ -118,10 +117,10 @@ const Div= styled.div`
 display:flex;
 align-items: center;
 justify-content: space-between;
-border-bottom: solid #ed6c5c 3px;
-background-color: #fa897b;
+border-bottom: solid #e5e5e5 1px;
+background-color: #fff;
 max-width: 100%;
-height: 15vh;
+height: 80px;
 
 @media(max-width:1024px){
     height: 10vh;
@@ -155,14 +154,10 @@ align-items: center;
 
 
 const H1= styled.h1`
-@import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap');
-font-family: 'Noto Sans TC', sans-serif;
 margin-left: 15px;
 margin-right: 30px;
-font-size: 2.8em;
+font-size: 2.0em;
 font-weight: 600;
-
-
 
 @media(max-width:414px){
     margin-right:15px; 

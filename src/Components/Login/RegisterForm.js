@@ -66,9 +66,6 @@ const floatIn= keyframes`
     }
 `
 const Div= styled.div`
-@import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap');
-
-font-family: 'Noto Sans TC', sans-serif;
 position: fixed;
 top: 3;
 right: 0;

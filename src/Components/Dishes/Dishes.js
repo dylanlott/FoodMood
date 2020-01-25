@@ -33,11 +33,9 @@ const pulse = keyframes`
     }   
 `
 const DishName= styled(Link)`
-@import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap');
 color: black;
 text-decoration: none;
-font-family: 'Noto Sans TC', sans-serif;
-background-color: whitesmoke;
+background-color: #fff;
 border-bottom: solid rgb(200, 202, 206) 3px;
 border-right: solid rgb(210, 210, 215) 3px;
 margin-top: 1.5em;

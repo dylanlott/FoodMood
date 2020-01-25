@@ -40,8 +40,6 @@ class UpdateInfo extends Component{
 export default UpdateInfo
 
 const Form= styled.form`
-@import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap');
-font-family: 'Noto Sans TC', sans-serif;
 display: flex;
 flex-direction: column;
 width: 100vw;
@@ -50,8 +48,6 @@ align-items: center;
 
 `
 const Input= styled.input`
-@import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap');
-font-family: 'Noto Sans TC', sans-serif;
 margin: 5px;
 width: 60%;
 border-radius: 6px;

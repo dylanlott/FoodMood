@@ -84,8 +84,6 @@ const floatIn= keyframes`
     }
 `
 const Div= styled.div`
-@import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap');
-font-family: 'Noto Sans TC', sans-serif;
 position: fixed;
 top: 3;
 right: 0;
@@ -147,8 +145,6 @@ height: 50%;
 }
 `
 const Input= styled.input`
-@import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap');
-font-family: 'Noto Sans TC', sans-serif;
 margin: 5px;
 width: 50%;
 border-radius: 6px;

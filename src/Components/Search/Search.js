@@ -71,8 +71,6 @@ handleChange=(event)=> {
 export default connect(null,{getCity})(Search)
 
 const Div = styled.div`
-@import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap');
-font-family: 'Noto Sans TC', sans-serif;
 width: 50%;
 
 height: 28vh;
@@ -93,8 +91,6 @@ background-color: white;
 
 `
 const Form = styled.form`
-@import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap');
-font-family: 'Noto Sans TC', sans-serif;
 margin-bottom: 3em;
 display: flex;
 justify-content: space-around;
@@ -109,14 +105,13 @@ border-radius: 6px;
 height: 2em;
 padding-left: 15%;
 font-size: 1em;
-
 `
 const Button= styled.button`
-
-background:  #ed6c5c;
+font-size: 18px;
+background:  #FA897B;
 border-radius: 3px;
 border: 2px solid #ed6c5c;
-color: white;
+color: #fff;
 margin: 0 0 0 1em;
 padding: 0.25em 1em;
 height: 100%;
@@ -157,9 +152,8 @@ flex-direction: column;
 }
 `
 const Select= styled.select`
+font-size: 16px;
 background-color: white;
-@import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap');
-font-family: 'Noto Sans TC', sans-serif;
 border-radius: 6px;
 min-width: 50%;
 border: 2px solid #ed6c5c;

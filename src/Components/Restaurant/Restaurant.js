@@ -127,10 +127,7 @@ margin-top: 0;
 `
 
 const Div =styled.div`
-@import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap');
-font-family: 'Noto Sans TC', sans-serif;
-
-background-color: whitesmoke;
+background-color: #fff;
 border-bottom: solid rgb(200, 202, 206) 3px;
 border-right: solid rgb(220, 220, 215) 3px;
 width: 25%;
